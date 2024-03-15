@@ -10,8 +10,12 @@
     // Configuration for TypeScript files
     {
       "files": ["**/*.ts", "**/*.tsx"],
-      "plugins": ["@typescript-eslint"],
-      "extends": ["eslint:recommended", "airbnb-typescript", "prettier"],
+      "plugins": ["@typescript-eslint", "tailwindcss"],
+      "extends": [
+        "plugin:tailwindcss/recommended",
+        "airbnb-typescript",
+        "prettier"
+      ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
         "project": "./tsconfig.json",
@@ -29,10 +33,17 @@
         "prettier"
       ],
       "parser": "astro-eslint-parser",
+      // Parse the script in `.astro` as TypeScript by adding the following configuration.
+      // It's the setting you need when using TypeScript.
+
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
         "project": "./tsconfig.json",
         "extraFileExtensions": [".astro"]
+      },
+      "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".astro"] }], // Accept jsx in astro files
+        "react/react-in-jsx-scope": "off"
       }
     }
   ]
