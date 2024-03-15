@@ -1,5 +1,5 @@
 export default {
-	'*.{js,jsx,ts,tsx,astro}': ['eslint --fix', 'eslint'],
+	'*.{js,jsx,ts,tsx,astro}': ['eslint', 'eslint --fix', 'prettier --write'],
 	'**/*.ts?(x)': () => 'npm run build',
-	'*.json': ['prettier --write'],
+	'*.json': ['prettier --write']
 };
