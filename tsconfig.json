@@ -4,8 +4,8 @@
     "strictNullChecks": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "preserve",
-    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "baseUrl": "/home/matt/repos/gutter-gladiators",
     "paths": {
       "@config/*": ["src/config/*"],
       "@js/*": ["src/js/*"],
@@ -15,9 +15,9 @@
       "@images/*": ["src/assets/images/*"],
       "@videos/*": ["src/assets/videos/*"],
       "@/*": ["src/*"]
-    }
+    },
+    "jsxImportSource": "react"
   },
-  // Parse only these TS files
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro"],
   "exclude": ["node_modules"]
 }
