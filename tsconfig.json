@@ -17,6 +17,7 @@
       "@/*": ["src/*"]
     }
   },
+  // Parse only these TS files
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro"],
   "exclude": ["node_modules"]
 }
