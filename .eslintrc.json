@@ -1,0 +1,44 @@
+{
+  // Configuration for JavaScript files
+  "root": true,
+  "extends": ["airbnb", "plugin:tailwindcss/recommended", "prettier"],
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "overrides": [
+    // Configuration for TypeScript files
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "plugins": ["@typescript-eslint"],
+      "extends": ["eslint:recommended", "airbnb-typescript", "prettier"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "./tsconfig.json",
+        "sourceType": "module"
+      },
+      "rules": {}
+    },
+    // Configuration for Astro
+    {
+      "files": ["**/*.astro"],
+      "plugins": [
+        "@typescript-eslint",
+        "react",
+        "unused-imports",
+        "tailwindcss"
+      ],
+      "extends": [
+        "plugin:tailwindcss/recommended",
+        "airbnb-typescript",
+        "prettier"
+      ],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "project": "./tsconfig.json",
+        "extraFileExtensions": [".astro"]
+      }
+    }
+  ]
+}
