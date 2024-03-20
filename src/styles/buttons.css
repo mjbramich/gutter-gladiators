@@ -1,0 +1,19 @@
+.btn {
+	@apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-base uppercase font-semibold text-default transition-colors ease-in duration-200 shadow focus-visible:outline-none focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 appearance-none;
+}
+
+.btn-primary {
+	@apply btn hover:bg-primary/80 bg-primary;
+}
+
+.btn-secondary {
+	@apply btn hover:bg-secondary/80 bg-secondary;
+}
+
+.btn-outline {
+	@apply btn bg-transparent border-2 border-default hover:bg-default hover:text-current;
+}
+
+.link {
+	@apply hover:text-muted;
+}

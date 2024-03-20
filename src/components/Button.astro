@@ -1,0 +1,46 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const {
+  variant = 'secondary',
+  size = 'default',
+  target,
+  text = Astro.slots.render('default'),
+  icon = '',
+  class: className = '',
+  type,
+  ...rest
+} = Astro.props 
+
+const variants = {
+  primary: 'btn-primary',
+  secondary: 'btn-secondary',
+  outline: 'btn-outline',
+  link: 'link',
+};
+
+const sizes = {
+    default: 'h-9 px-4 py-2',
+				sm: 'h-8 rounded-md px-3 text-xs',
+				lg: 'h-10 rounded-md px-8',
+				icon: 'h-9 w-9'
+}
+---
+
+{
+  type === 'button' || type === 'submit' || type === 'reset' ? (
+    <button type={type} class:list={[variants[variant], sizes[size], className]} {...rest} >
+      {text}
+      {icon && <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" />}
+    </button>
+  ) : (
+    <a
+     class:list={[variants[variant] || '',
+      {...(target ? { target: target, rel: 'noopener noreferrer' } : {})}, sizes[size], className
+      ]} {...rest}
+    >
+      {text}
+      {icon && <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" />}
+    </a>
+  )
+}

@@ -1,11 +1,14 @@
 /* @config "../../tailwind.config.mjs"; */
- @import './buttons.css'; 
 
-@tailwind base;
+/* Imports in this order not at top of file, otherwise tailwind base styles will overide*/
+/* https://tailwindcss.com/docs/using-with-preprocessors#build-time-imports  */
 
-@tailwind components;
+@import 'tailwindcss/base';
 
-@tailwind utilities;
+@import 'tailwindcss/components';
+@import './buttons.css';
+
+@import 'tailwindcss/utilities';
 
 @layer base {
 	:root {
