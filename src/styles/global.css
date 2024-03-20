@@ -1,3 +1,20 @@
+/* @config "../../tailwind.config.mjs"; */
+ @import './buttons.css'; 
+
 @tailwind base;
+
 @tailwind components;
+
 @tailwind utilities;
+
+@layer base {
+	:root {
+		--gg-primary-color: 255 126 3;
+		--gg-secondary-color: 191 193 192;
+		--gg-accent-color: 2 255 255;
+		--bg-primary: #f7f6f4;
+		--bg-secondary: #ffffff;
+		--text-default: rgb(16 16 16);
+		--text-muted: rgb(16 16 16 / 66%);
+	}
+}
