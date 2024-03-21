@@ -22,15 +22,10 @@
     // Configuration for Astro
     {
       "files": ["**/*.astro"],
-      "plugins": [
-        "@typescript-eslint",
-        "react",
-        "unused-imports",
-        "tailwindcss"
-      ],
+      "plugins": ["astro", "@typescript-eslint", "unused-imports"],
       "extends": [
-        "plugin:tailwindcss/recommended",
         "airbnb-typescript",
+        "plugin:tailwindcss/recommended",
         "prettier"
       ],
       "parser": "astro-eslint-parser",
