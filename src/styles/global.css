@@ -1,6 +1,6 @@
 /* @config "../../tailwind.config.mjs"; */
 
-/* Imports in this order not at top of file, otherwise tailwind base styles will overide*/
+/* Imports in this order not at top of file, otherwise tailwind base styles will overide */
 /* https://tailwindcss.com/docs/using-with-preprocessors#build-time-imports  */
 
 @import 'tailwindcss/base';
@@ -19,5 +19,15 @@
 		--bg-secondary: #ffffff;
 		--text-default: rgb(16 16 16);
 		--text-muted: rgb(16 16 16 / 66%);
+	}
+}
+
+@layer components {
+	.bg-base {
+		background-color: var(--bg-primary);
+	}
+
+	.bg-light {
+		background-color: var(--bg-secondary);
 	}
 }
