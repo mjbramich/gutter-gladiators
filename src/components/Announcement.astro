@@ -10,12 +10,12 @@ const { text, location } = Astro.props;
 ---
 
 <div
-	className='relative flex justify-between truncate bg-primary px-3 py-2 text-sm font-medium text-default dark:border-b dark:bg-transparent'
+	class='relative flex justify-between truncate bg-primary px-3 py-2 text-sm font-medium text-default dark:border-b dark:bg-transparent'
 >
-	<ul className='hidden space-x-4 text-default lg:flex'>
+	<ul class='hidden space-x-4 text-default lg:flex'>
 		{
 			text.map((t) => (
-				<li className='flex items-center space-x-2'>
+				<li class='flex items-center space-x-2'>
 					<Icon name='arrow-r' />
 					<span>{t}</span>
 				</li>
@@ -23,8 +23,8 @@ const { text, location } = Astro.props;
 		}
 	</ul>
 
-	<div className='flex items-center space-x-2'>
+	<div class='flex items-center space-x-2'>
 		<Icon name='arrow-r' />
-		<p className='text-default'>{location}</p>
+		<p class='text-default'>{location}</p>
 	</div>
 </div>
