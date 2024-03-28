@@ -30,4 +30,16 @@
 	.bg-light {
 		background-color: var(--bg-secondary);
 	}
+
+	.bg-hero {
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		overflow: hidden;
+	}
+
+	.hero-overlay {
+		background-color: transparent;
+		opacity: 0.7;
+	}
 }
