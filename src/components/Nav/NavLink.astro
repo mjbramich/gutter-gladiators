@@ -1,0 +1,24 @@
+---
+// data
+
+interface Props {
+	text: string;
+	href: string;
+	class?: string;
+}
+
+const { text, href, class: className } = Astro.props;
+
+// if the current page is the same as the link, we add a gradient underline
+---
+
+<li>
+	<a
+		class:list={[
+			`primary-focus relative block w-full rounded-md px-4 font-semibold  uppercase transition hover:text-primary ${className}`
+		]}
+		href={href}
+	>
+		{text}
+	</a>
+</li>

@@ -1,0 +1,214 @@
+---
+import Years from '@assets/images/10YEARS+.png';
+import Logo from '@assets/images/gglogo.png';
+import Announcement from '@components/Announcement.astro';
+import Button from '@components/Button.astro';
+import NavLink from '@components/Nav/NavLink.astro';
+import Toggle from '@components/Nav/Toggle.astro';
+import { Image, Picture } from 'astro:assets';
+
+interface Link {
+	text: string;
+	href: string;
+	ariaLabel?: string;
+	icon?: string;
+}
+
+export interface ActionLink {
+	variant: 'primary' | 'secondary' | 'outline' | 'link';
+	text: string;
+	type: 'button' | 'submit' | 'reset' | 'link';
+	icon?: string;
+}
+
+export interface Props {
+	id?: string;
+	links?: Link[];
+	isFullWidth?: boolean;
+	position?: string;
+	actions?: ActionLink[];
+}
+
+const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.props;
+---
+
+<!--class:List is clsx -->
+<header
+	class:list={[
+		' z-40 mx-auto w-full  shadow transition-all duration-500 ease-in-out bg-page flex flex-col'
+	]}
+	{...id ? { id } : {}}
+>
+	<Announcement
+		text={['Licensed Plumbers', 'Licensed working at heights', 'Police Checked']}
+		location='Servicing the North-West Coast of Tasmania'
+	/>
+
+	<div
+		class:list={[
+			'text-default py-4 px-6 mx-auto w-full flex items-center justify-center md:justify-between',
+			{
+				'max-w-7xl': !isFullWidth
+			}
+		]}
+	>
+		<div class='flex items-center md:hidden'>
+			<Toggle />
+		</div>
+
+		<div
+			class='*:border-bg-base flex grow items-center justify-center gap-12 divide-x md:justify-start'
+		>
+			<a href='/'>
+				<Image
+					src={Logo}
+					alt='logo'
+					widths={[100, 120]}
+					loading='eager'
+					sizes='(max-width: 1023px) 100px, 120px'
+					class='w-full'
+				/>
+			</a>
+
+			<div class='hidden items-center gap-4 lg:flex'>
+				<Picture src={Years} alt='logo' width={100} class='ml-12' />
+				<p class='max-w-60 font-semibold'>Extensive Plumbing and Gutter Cleaning Experience</p>
+			</div>
+		</div>
+
+		<Button icon='phone-l' variant='link' class='text-4xl md:hidden' />
+
+		<div class:list={['hidden md:flex items-center  p-3 md:p-0']}>
+			<div class='flex items-center justify-between gap-4 md:w-auto'>
+				{actions.map((btnProps) => <Button {...btnProps} />)}
+			</div>
+		</div>
+	</div>
+	<nav
+		class='bg-base relative hidden size-full flex-1 items-center justify-center overflow-y-auto py-2 text-default md:flex md:w-auto md:overflow-x-auto md:overflow-y-visible'
+		aria-label='Main navigation'
+	>
+		<ul
+			class='m-auto flex w-full flex-col gap-4 py-8 text-xl font-semibold uppercase tracking-[0.01rem] *:m-auto *:grow-0 md:w-auto md:flex-row md:gap-0 md:self-center md:py-2 md:text-[0.9375rem]'
+		>
+			{links.map(({ text, href }) => <NavLink href={href} text={text} />)}
+
+			<li
+				class='mt-4 border-none px-4 font-semibold uppercase transition hover:text-primary md:hidden'
+			>
+				Follow us
+			</li>
+			<li class='flex md:hidden'>
+				<Button
+					variant='link'
+					icon='facebook'
+					class='text-5xl text-primary hover:text-primary/80'
+					href='https://www.facebook.com/GutterGladiators'
+				/>
+				<Button
+					variant='link'
+					icon='instagram'
+					class='text-5xl text-primary hover:text-primary/80'
+					href='https://www.instagram.com'
+				/>
+			</li>
+		</ul>
+	</nav>
+</header>
+
+<script>
+	function mobileMenu() {
+		const header = document.getElementById('header');
+		const navContent = document.querySelector('#header nav');
+		const hamburgerBtn = document.querySelector('[data-toggle-menu]');
+		let isOpen = false;
+
+		const toggleNav = () => {
+			isOpen ? closeNav() : openNav();
+			isOpen = !isOpen;
+		};
+
+		function openNav() {
+			document.body.classList.add('overflow-hidden');
+			header?.classList.add('h-dvh', 'expanded');
+			hamburgerBtn?.classList.add('expanded');
+			navContent?.classList.remove('fade-out', 'hidden');
+			navContent?.classList.add('fade-in');
+		}
+
+		function closeNav() {
+			hamburgerBtn?.classList.remove('expanded');
+			header?.classList.remove('expanded', 'overflow-hidden');
+			navContent?.classList.remove('fade-in');
+			navContent?.classList.add('fade-out');
+			header!.onanimationend = (e) => {
+				if (e.animationName === 'fade-out') {
+					header?.classList.remove('h-dvh');
+				}
+			};
+		}
+
+		// Close mobile menu on resize
+
+		function handleResize() {
+			closeNav();
+			isOpen = false;
+			navContent?.classList.remove('fade-out');
+			navContent?.classList.add('hidden');
+			header?.classList.remove('h-dvh');
+		}
+
+		return {
+			toggleNav,
+			handleResize
+		};
+	}
+
+	(function init() {
+		const { toggleNav, handleResize } = mobileMenu();
+		const navBtn = document.querySelector('[data-toggle-menu]');
+		const screenSize = window.matchMedia('(max-width: 767px)');
+		navBtn?.addEventListener('click', () => toggleNav());
+		screenSize.addEventListener('change', () => handleResize());
+	})();
+</script>
+
+<style>
+	.fade-in {
+		animation: fade-in ease-in-out 0.5s forwards;
+	}
+
+	.fade-out {
+		animation: fade-out ease-in-out 0.5s forwards;
+	}
+
+	@keyframes fade-in {
+		0% {
+			display: none;
+			opacity: 0;
+		}
+		1% {
+			display: block;
+			opacity: 0;
+		}
+		100% {
+			display: block;
+			opacity: 1;
+		}
+	}
+
+	@keyframes fade-out {
+		0% {
+			display: block;
+			opacity: 1;
+		}
+		99% {
+			display: block;
+			opacity: 0;
+		}
+		100% {
+			display: none;
+			opacity: 0;
+		}
+	}
+</style>
