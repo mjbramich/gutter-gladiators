@@ -1,0 +1,107 @@
+---
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/effect-fade';
+
+import Button from './Button.astro';
+---
+
+<!--Outer Hero container -->
+<div class='relative py-16 lg:py-32'>
+	<!--Swiper -->
+
+	<div class='swiper swiper-scale-effect absolute left-0 top-0 z-0 size-full'>
+		<!-- Additional required wrapper -->
+		<di class='swiper-wrapper size-full'>
+			<!-- Slides -->
+			<div class='swiper-slide'>
+				<div class='bg-hero swiper-slide-cover bg-[url(./src/assets/images/vacuum-system.jpg)]'>
+				</div>
+			</div>
+
+			<div class='swiper-slide'>
+				<div
+					class='bg-hero swiper-slide-cover bg-[url(./src/assets/images/gutters-metal-roof.jpg)]'
+				>
+				</div>
+			</div>
+
+			<div class='swiper-slide'>
+				<div class='bg-hero swiper-slide-cover bg-[url(./src/assets/images/ute.jpg)]'></div>
+			</div>
+		</di>
+	</div>
+	<!--Overlay -->
+
+	<div
+		class='hero-overlay absolute left-0 top-0 size-full bg-gradient-to-r from-zinc-800/60 to-zinc-900'
+	>
+	</div>
+
+	<!--Content  -->
+	<di
+		class='relative mx-auto flex max-w-xl flex-col items-center justify-center gap-6 px-4 py-10 text-white md:max-w-2xl lg:max-w-4xl xl:max-w-6xl'
+	>
+		<div class='hero-overlay absolute left-0 top-0 size-full opacity-50 mix-blend-overlay'></div>
+		<h1 class='text-center text-4xl font-bold uppercase sm:text-6xl'>Gutter Gladiators</h1>
+
+		<ul
+			class='last:border-r-none hidden gap-4 text-xl font-semibold *:border-r *:pr-4 last:pr-0 sm:inline-flex'
+		>
+			<li class=''>Residential</li>
+			<li>Commerical</li>
+			<li class='border-none'>Industrial</li>
+		</ul>
+
+		<p class='text-center font-semibold'>
+			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat nulla, porro nam fugit omnis
+			excepturi ipsam ipsum molestias recusandae quam vitae. Asperiores et ea nisi, sequi a
+			quibusdam iure expedita!
+		</p>
+
+		<Button
+			variant='primary'
+			size='lg'
+			href='https://www.facebook.com/GutterGladiators'
+			text='Contact'
+		/>
+	</di>
+</div>
+
+<script>
+	import Swiper from 'swiper';
+	import { Autoplay, EffectFade } from 'swiper/modules';
+
+	const swiper = new Swiper('.swiper', {
+		direction: 'horizontal',
+		autoplay: {
+			delay: 5000
+		},
+		loop: true,
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true
+		},
+
+		modules: [Autoplay, EffectFade]
+	});
+</script>
+
+<style>
+	.swiper-slide-cover {
+		transition: 10s ease-out;
+		transform: scale(1);
+	}
+
+	.swiper-slide-active .swiper-slide-cover {
+		transform: scale(1.2);
+	}
+
+	.swiper-slide-cover {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+</style>
