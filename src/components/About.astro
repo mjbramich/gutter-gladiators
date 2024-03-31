@@ -1,0 +1,83 @@
+---
+import Logo from '@assets/images/shieldlogo.png';
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+
+import Button from './Button.astro';
+import Card from './Card.astro';
+
+interface CardInfo {
+	icon: string;
+	title: string;
+	content: string;
+}
+
+const aboutData: CardInfo[] = [
+	{
+		icon: 'clock',
+		title: 'Working at heights certified',
+		content:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis provident enim voluptatum dolorem minus saepe quisquam sed est tempore perspiciati'
+	},
+	{
+		icon: 'clock',
+		title: 'Working at heights certified',
+		content:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis provident enim voluptatum dolorem minus saepe quisquam sed est tempore perspiciati'
+	},
+	{
+		icon: 'clock',
+		title: 'Working at heights certified',
+		content:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis provident enim voluptatum dolorem minus saepe quisquam sed est tempore perspiciati'
+	},
+	{
+		icon: 'clock',
+		title: 'Working at heights certified',
+		content:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis provident enim voluptatum dolorem minus saepe quisquam sed est tempore perspiciati'
+	}
+];
+---
+
+<div class='bg-base py-16 sm:py-24'>
+	<div class='mx-auto max-w-7xl px-6 lg:px-8'>
+		<div class='gap-8 lg:flex'>
+			<div class='mx-auto lg:mx-0 lg:max-w-2xl'>
+				<h2 class='mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
+					Choose The Professionals
+				</h2>
+				<p class='mt-6 text-lg leading-8 text-gray-600'>
+					Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
+					Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+				</p>
+
+				<div class='mt-6 flex items-center gap-2'>
+					<Icon name='clock' class='text-3xl' />
+					<span class='sm:text-lg'> Speedy Services with great availability </span>
+				</div>
+				<div class='mt-6 hidden items-end gap-8 sm:flex'>
+					<Button text='0400 000 000' variant='primary' icon='phone-r' size='lg' />
+					<Button text='Get a quote' variant='outline' icon='arrow-r' size='lg' />
+				</div>
+
+				<div class='mt-6 flex items-end gap-4 sm:hidden lg:justify-center'>
+					<Button text='0400 000 000' variant='primary' icon='phone-r' />
+					<Button text='Get a quote' variant='outline' icon='arrow-r' />
+				</div>
+			</div>
+
+			<div class='ml-auto hidden justify-center lg:flex lg:items-center'>
+				<Image src={Logo} alt='logo' width={300} />
+			</div>
+		</div>
+		<!--GRID -->
+		<div class='grid gap-4 py-16 sm:grid-cols-2 lg:grid-cols-4'>
+			{
+				aboutData.map(({ icon, title, content }) => (
+					<Card icon={icon} title={title} content={content} />
+				))
+			}
+		</div>
+	</div>
+</div>
