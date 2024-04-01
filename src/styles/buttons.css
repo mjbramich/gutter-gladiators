@@ -1,9 +1,9 @@
 .btn {
-	@apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-base uppercase font-semibold text-default transition-colors ease-in duration-200 shadow focus-visible:outline-none focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 appearance-none;
+	@apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-default uppercase font-semibold  transition-colors ease-in duration-200 shadow focus-visible:outline-none focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50  cursor-pointer;
 }
 
 .btn-primary {
-	@apply btn hover:bg-primary/80 bg-primary;
+	@apply btn bg-primary hover:bg-primary/80 border-primary;
 }
 
 .btn-secondary {
@@ -11,9 +11,9 @@
 }
 
 .btn-outline {
-	@apply btn bg-transparent border-2 border-default hover:bg-default hover:text-current;
+	@apply btn bg-transparent text-default border-2 border-default hover:bg-default hover:text-white;
 }
 
 .link {
-	@apply hover:text-muted;
+	@apply transition-colors ease-in duration-200  hover:text-white cursor-pointer;
 }
