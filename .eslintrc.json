@@ -1,7 +1,7 @@
 {
 	// Configuration for JavaScript files
 	"root": true,
-	"extends": ["airbnb", "plugin:tailwindcss/recommended", "prettier"],
+	"extends": ["airbnb-base", "plugin:tailwindcss/recommended", "prettier"],
 	"env": {
 		"browser": true,
 		"es2021": true
@@ -24,15 +24,22 @@
 		// Configuration for Astro
 		{
 			"files": ["**/*.astro"],
-			"plugins": ["@typescript-eslint", "unused-imports", "simple-import-sort"],
-			"extends": ["plugin:tailwindcss/recommended", "prettier"],
+			"plugins": ["@typescript-eslint", "unused-imports", "react", "simple-import-sort"],
+			"extends": [
+				"airbnb-typescript",
+				"plugin:astro/recommended",
+				"plugin:tailwindcss/recommended",
+				"prettier"
+			],
 			"parser": "astro-eslint-parser",
+			"processor": "astro/client-side-ts", // <- Uses the "client-side-ts" processor.
+
 			// Parse the script in `.astro` as TypeScript by adding the following configuration.
 			// It's the setting you need when using TypeScript.
 			"parserOptions": {
 				"parser": "@typescript-eslint/parser",
-				"project": "./tsconfig.json",
-				"extraFileExtensions": [".astro"]
+				"extraFileExtensions": [".astro"],
+				"project": "./tsconfig.json"
 			},
 
 			"rules": {
