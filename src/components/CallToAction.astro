@@ -1,0 +1,79 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import Button from './Button.astro';
+---
+
+<section class='bg-hero relative bg-[url(./src/assets/images/fascia.jpg)]'>
+	<!--Overlay -->
+	<div
+		class='hero-overlay absolute left-0 top-0 size-full bg-gradient-to-r from-zinc-800/60 to-zinc-900'
+	>
+	</div>
+
+	<!--Content -->
+	<div class='container relative flex flex-col justify-between gap-6 md:flex-row'>
+		<!-- <div class='hero-overlay absolute left-0 top-0 size-full opacity-50 mix-blend-overlay'></div> -->
+		<div class='flex flex-col items-center justify-evenly text-lg text-white md:items-start'>
+			<div class='mb-6 inline-flex items-center gap-2'>
+				<Icon name='warning' class='text-7xl' />
+				<p class='h3 font-bold'>Attention</p>
+			</div>
+			<h3 class='h2 mb-6 text-center md:text-start'>Act now to protect your property</h3>
+			<div>
+				<ul
+					class='mb-6 flex max-w-full flex-wrap items-center justify-center gap-4 rounded-sm text-xl text-white *:inline-flex *:items-center *:gap-1 *:font-semibold md:justify-start lg:border lg:border-white lg:p-2'
+				>
+					<li>
+						<Icon name='tick' class='text-primary' />
+						<span>Prevent Rust</span>
+					</li>
+					<li>
+						<Icon name='tick' class='text-primary' />
+						<span>Prevent Pests</span>
+					</li>
+					<li>
+						<Icon name='tick' class='text-primary' />
+						<span>Prevent Pests</span>
+					</li>
+					<li>
+						<Icon name='tick' class='text-primary' />
+						<span>Reduce Pollution</span>
+					</li>
+				</ul>
+			</div>
+			<p class='description text-center md:max-w-[500px] md:text-start'>
+				Don’t let clogged gutters cause expensive water damage. Call Gutter Gladiators today for
+				immediate gutter cleaning services and receive a complimentary roof condition report.
+			</p>
+		</div>
+		<div class='flex flex-col items-center justify-end text-white'>
+			<div>
+				<span class='inline-flex items-center gap-2 text-xl'>
+					<Icon name='tick' class='text-2xl text-primary' />
+					We're Available
+				</span>
+			</div>
+			<p class='h3 text-center'>Monday - Friday</p>
+			<div class='mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row md:flex-col'>
+				<Button
+					text='0400 000 000'
+					href='tel:0400000000'
+					variant='primary'
+					class='h-14 text-lg text-white'
+				>
+					<Icon name='phone-r' />
+				</Button>
+				<Button
+					text='Get a quote'
+					href='#contact'
+					variant='outline'
+					icon='arrow-r'
+					class='h-14 border-white text-lg text-white hover:bg-white hover:text-default'
+				>
+					<Icon name='arrow-r' />
+				</Button>
+			</div>
+		</div>
+	</div>
+</section>
