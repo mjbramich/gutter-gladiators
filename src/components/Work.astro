@@ -1,0 +1,110 @@
+---
+import Button from './Button.astro';
+---
+
+<div class='bg-base'>
+	<div class='container'>
+		<div class='justify-between md:flex'>
+			<h2 class='h1 capitalize tracking-tight md:w-1/2'>Recent Work</h2>
+			<p class='description mt-4 md:mt-0 md:w-1/2'>
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, accusantium aut
+				necessitatibus cumque iure tempore distinctio corrupti, voluptatibus, quod aperiam nobis
+				similique quae quas nam reprehenderit ut ipsa dicta minima.
+			</p>
+		</div>
+
+		<!--PHOTO SLIDES -->
+
+		<div class='mt-12 grid gap-8 md:grid-cols-3'>
+			<img-comparison-slider class='slider-example-focus relative aspect-square drop-shadow-lg'>
+				<div slot='first' class='aspect-square size-full'>
+					<img src='/src/assets/images/ute.jpg' class='aspect-square h-full w-auto' alt='todo' />
+					<span
+						class='captitalize absolute left-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
+						>Before</span
+					>
+				</div>
+				<div slot='second'>
+					<img
+						src='/src/assets/images/vacuum-system.jpg'
+						class='aspect-square h-full w-auto object-cover'
+						alt='todo'
+					/>
+					<span
+						class='captitalize absolute right-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
+						>After</span
+					>
+				</div>
+			</img-comparison-slider>
+
+			<img-comparison-slider class='slider-example-focus relative aspect-square drop-shadow-lg'>
+				<div slot='first' class='aspect-square size-full'>
+					<img
+						src='/src/assets/images/gutters-metal-roof.jpg'
+						class='aspect-square h-full w-auto'
+						alt='todo'
+					/>
+					<span
+						class='captitalize absolute left-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
+						>Before</span
+					>
+				</div>
+				<div slot='second'>
+					<img
+						src='/src/assets/images/vacuum-system.jpg'
+						class='aspect-square h-full w-auto object-cover'
+						alt='todo'
+					/>
+					<span
+						class='captitalize absolute right-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
+						>After</span
+					>
+				</div>
+			</img-comparison-slider>
+
+			<img-comparison-slider class='slider-example-focus relative aspect-square drop-shadow-lg'>
+				<div slot='first' class='slider-example-focus aspect-square size-full'>
+					<img src='/src/assets/images/ute.jpg' class='aspect-square h-full w-auto' alt='todo' />
+					<span
+						class='captitalize absolute left-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
+						>Before</span
+					>
+				</div>
+				<div slot='second'>
+					<img
+						src='/src/assets/images/vacuum-system.jpg'
+						class='aspect-square h-full w-auto object-cover'
+						alt='todo'
+					/>
+					<span
+						class='captitalize absolute right-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
+						>After</span
+					>
+				</div>
+			</img-comparison-slider>
+		</div>
+
+		<div class='mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row'>
+			<Button text='0400 000 000' variant='primary' icon='phone-r' class='h-14 text-lg' />
+			<Button text='Get a quote' variant='outline' icon='arrow-r' class='h-14 text-lg' />
+		</div>
+	</div>
+</div>
+
+<script src='https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js'></script>
+<link
+	rel='stylesheet'
+	href='https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css'
+/>
+
+<style>
+	img-comparison-slider {
+		border: 8px solid white;
+		--divider-width: 4px;
+	}
+
+	.slider-example-focus:focus {
+		outline: none;
+		box-shadow: 0px 0px 10px 2px orange;
+	}
+</style>
