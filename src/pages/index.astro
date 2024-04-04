@@ -1,8 +1,13 @@
 ---
 import About from '@components/About.astro';
+import CallToAction from '@components/CallToAction.astro';
+import Features from '@components/Features.astro';
+import Form from '@components/Form.astro';
 import Hero from '@components/Hero.astro';
 import Header, { type ActionLink } from '@components/Nav/Header.astro';
 import Stats from '@components/Stats.astro';
+import Testimonials from '@components/Testimonials.astro';
+import Work from '@components/Work.astro';
 
 import Layout from '../layouts/Layout.astro';
 
@@ -33,6 +38,11 @@ const actions: ActionLink[] = [
 		<Hero />
 		<About />
 		<Stats />
+		<Features />
+		<Work />
+		<Testimonials />
+		<Form />
+		<CallToAction />
 		<!-- <Button variant='primary' href="/home" target="/hello" type="button"  >Hello</Button>
 		<Button variant='secondary' href="/home" target="/hello" s>Hello</Button>
 		<Button variant='link' href="/home" target="/hello" size="'sm" >Hello</Button>
