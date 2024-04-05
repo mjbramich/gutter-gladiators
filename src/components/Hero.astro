@@ -3,6 +3,10 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 
+import fascia from '@/assets/images/fascia.jpg';
+import metalRoof from '@/assets/images/gutters-metal-roof.jpg';
+import ute from '@/assets/images/ute.jpg';
+
 import Button from './Button.astro';
 ---
 
@@ -12,24 +16,21 @@ import Button from './Button.astro';
 
 	<div class='swiper swiper-scale-effect absolute left-0 top-0 z-0 size-full'>
 		<!-- Additional required wrapper -->
-		<di class='swiper-wrapper size-full'>
+		<div class='swiper-wrapper size-full'>
 			<!-- Slides -->
 			<div class='swiper-slide'>
-				<div class='bg-hero swiper-slide-cover bg-[url(./src/assets/images/vacuum-system.jpg)]'>
+				<div class='bg-hero swiper-slide-cover' style=`background-image: url(${fascia.src})`></div>
+			</div>
+
+			<div class='swiper-slide'>
+				<div class='bg-hero swiper-slide-cover' style=`background-image: url(${metalRoof.src})`>
 				</div>
 			</div>
 
 			<div class='swiper-slide'>
-				<div
-					class='bg-hero swiper-slide-cover bg-[url(./src/assets/images/gutters-metal-roof.jpg)]'
-				>
-				</div>
+				<div class='bg-hero swiper-slide-cover' style=`background-image: url(${ute.src})`></div>
 			</div>
-
-			<div class='swiper-slide'>
-				<div class='bg-hero swiper-slide-cover bg-[url(./src/assets/images/ute.jpg)]'></div>
-			</div>
-		</di>
+		</div>
 	</div>
 	<!--Overlay -->
 
@@ -39,39 +40,49 @@ import Button from './Button.astro';
 	</div>
 
 	<!--Content  -->
-	<di
+	<div
 		class='relative mx-auto flex max-w-xl flex-col items-center justify-center gap-6 px-4 py-10 text-white md:max-w-2xl lg:max-w-4xl xl:max-w-6xl'
 	>
-		<div class='hero-overlay absolute left-0 top-0 size-full opacity-50 mix-blend-overlay'></div>
-		<h1 class='text-center text-4xl font-bold uppercase sm:text-6xl'>Gutter Gladiators</h1>
+		<!-- <div class='hero-overlay absolute left-0 top-0 size-full opacity-50 mix-blend-overlay'></div> -->
+		<h1
+			class='text-center text-4xl font-bold uppercase sm:text-6xl'
+			data-aos='fade-up'
+			data-aos-delay='.2'
+		>
+			Gutter Gladiators
+		</h1>
 
 		<ul
 			class='last:border-r-none hidden gap-4 text-xl font-semibold *:border-r *:pr-4 last:pr-0 sm:inline-flex'
+			data-aos='fade-up'
+			data-aos-delay='.4'
 		>
 			<li class=''>Residential</li>
 			<li>Commerical</li>
 			<li class='border-none'>Industrial</li>
 		</ul>
 
-		<p class='text-center font-semibold'>
+		<p class='text-center font-semibold' data-aos='fade-up' data-aos-delay='.6'>
 			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat nulla, porro nam fugit omnis
 			excepturi ipsam ipsum molestias recusandae quam vitae. Asperiores et ea nisi, sequi a
 			quibusdam iure expedita!
 		</p>
 
 		<Button
+			data-aos='fade-up'
+			data-aos-delay='.8'
 			variant='primary'
 			size='lg'
 			href='https://www.facebook.com/GutterGladiators'
 			text='Contact'
 		/>
-	</di>
+	</div>
 </div>
 
 <script>
 	import Swiper from 'swiper';
 	import { Autoplay, EffectFade } from 'swiper/modules';
-
+	// eslint-disable-next-line
 	const swiper = new Swiper('.swiper', {
 		direction: 'horizontal',
 		autoplay: {
