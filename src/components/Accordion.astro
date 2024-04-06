@@ -1,0 +1,86 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props as Props;
+---
+
+<div class='accordion border-1 group relative border-b border-default'>
+	<button
+		class='primary-focus accordion__button hover:text-primary-500 flex w-full flex-1 items-center justify-between gap-2 py-3 text-left text-lg font-semibold transition'
+		type='button'
+		id={`${title} accordion menu button`}
+		aria-expanded='false'
+		aria-controls={`${title} accordion menu content`}
+	>
+		{title}
+		<Icon
+			name='plus'
+			aria-hidden='true'
+			class='accordion__chevron size-7 shrink-0 transition-transform'
+		/>
+	</button>
+
+	<div
+		id={`${title} accordion menu content`}
+		aria-labelledby={`${title} accordion menu button`}
+		class='accordion__content hidden overflow-hidden transition-all duration-300 ease-in-out'
+		style='max-height: 0;'
+	>
+		<slot />
+	</div>
+</div>
+
+<script>
+	function accordionSetup() {
+		const accordionMenus = document.querySelectorAll('.accordion');
+
+		accordionMenus.forEach((accordionMenu) => {
+			const accordionButton: HTMLElement | null = accordionMenu.querySelector('.accordion__button');
+			const accordionChevron: HTMLElement | null =
+				accordionMenu.querySelector('.accordion__chevron');
+			const accordionContent: HTMLElement | null =
+				accordionMenu.querySelector('.accordion__content');
+
+			if (accordionButton && accordionContent && accordionChevron) {
+				accordionButton.addEventListener('click', (event) => {
+					if (!accordionMenu.classList.contains('active')) {
+						// if accordion is currently closed, so open it
+						accordionMenu.classList.add('active');
+						accordionButton.setAttribute('aria-expanded', 'true');
+
+						// set max-height to the height of the accordion content
+						// this makes it animate properly
+						accordionContent.classList.remove('hidden');
+						accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+						accordionChevron.classList.add('rotate-45');
+					} else {
+						// accordion is currently open, so close it
+						accordionMenu.classList.remove('active');
+						accordionButton.setAttribute('aria-expanded', 'false');
+
+						// set max-height to the height of the accordion content
+						// this makes it animate properly
+						accordionContent.style.maxHeight = '0px';
+						accordionChevron.classList.remove('rotate-45');
+						// delay to allow close animation
+						setTimeout(() => {
+							accordionContent.classList.add('hidden');
+						}, 300);
+					}
+					event.preventDefault();
+					return false;
+				});
+			}
+		});
+	}
+
+	// runs on initial page load
+	accordionSetup();
+
+	// runs on view transitions navigation
+	document.addEventListener('astro:after-swap', accordionSetup);
+</script>
