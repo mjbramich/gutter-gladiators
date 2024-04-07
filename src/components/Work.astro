@@ -22,45 +22,10 @@ import Button from './Button.astro';
 		<!--PHOTO SLIDES -->
 
 		<div class='mt-12 grid gap-8 md:grid-cols-3'>
-			<img-comparison-slider class='slider-example-focus relative aspect-square drop-shadow-lg'>
+			<img-comparison-slider class='slider-example-focus relative drop-shadow-lg'>
 				<div slot='first' class=''>
-					<img src={ute.src} class='aspect-square h-full max-w-full' alt='todo' />
+					<img src={ute.src} class='aspect-square max-h-full max-w-full object-cover' alt='todo' />
 
-					<span
-						class='captitalize absolute left-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
-						>Before</span
-					>
-				</div>
-				<div slot='second'>
-					<img src={vac.src} class='aspect-square h-full max-w-full' alt='todo' />
-
-					<span
-						class='captitalize absolute right-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
-						>After</span
-					>
-				</div>
-			</img-comparison-slider>
-
-			<img-comparison-slider class='slider-example-focus relative aspect-square drop-shadow-lg'>
-				<div slot='first' class=''>
-					<img src={gutter.src} class='aspect-square h-full max-w-full' alt='todo' />
-					<span
-						class='captitalize absolute left-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
-						>Before</span
-					>
-				</div>
-				<div slot='second' class='aspect-square size-full'>
-					<img src={vac.src} class='aspect-square h-full max-w-full' alt='todo' />
-					<span
-						class='captitalize absolute right-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
-						>After</span
-					>
-				</div>
-			</img-comparison-slider>
-
-			<img-comparison-slider class='slider-example-focus relative aspect-square drop-shadow-lg'>
-				<div slot='first' class='slider-example-focus'>
-					<Image src={ute} class='aspect-square h-full max-w-full' alt='todo' />
 					<span
 						class='captitalize absolute left-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
 						>Before</span
@@ -68,6 +33,42 @@ import Button from './Button.astro';
 				</div>
 				<div slot='second'>
 					<img src={vac.src} class='aspect-square h-full max-w-full object-cover' alt='todo' />
+
+					<span
+						class='captitalize absolute right-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
+						>After</span
+					>
+				</div>
+			</img-comparison-slider>
+
+			<img-comparison-slider class='slider-example-focus relative drop-shadow-lg'>
+				<div slot='first' class='size-full'>
+					<img src={gutter.src} class='aspect-square max-w-full' alt='todo' />
+					<span
+						class='captitalize absolute left-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
+						>Before</span
+					>
+				</div>
+				<div slot='second' class='size-full'>
+					<img src={vac.src} class='aspect-square max-w-full' alt='todo' />
+					<span
+						class='captitalize absolute right-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
+						>After</span
+					>
+				</div>
+			</img-comparison-slider>
+
+			<img-comparison-slider class='slider-example-focus relative drop-shadow-lg'>
+				<div slot='first' class='slider-example-focus'>
+					<Image src={ute} class='aspect-square h-full max-w-full' alt='todo' />
+					<span
+						class='captitalize absolute left-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
+						>Before</span
+					>
+				</div>
+				<div slot='second' class='slider-example-focus'>
+					<img src={vac.src} class='aspect-square h-full max-w-full' alt='todo' />
+
 					<span
 						class='captitalize absolute right-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
 						>After</span
