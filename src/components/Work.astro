@@ -23,8 +23,8 @@ import Button from './Button.astro';
 
 		<div class='mt-12 grid gap-8 md:grid-cols-3'>
 			<img-comparison-slider class='slider-example-focus relative aspect-square drop-shadow-lg'>
-				<div slot='first' class='aspect-square size-full'>
-					<img src={ute.src} class='aspect-square h-full w-auto' alt='todo' />
+				<div slot='first' class=''>
+					<img src={ute.src} class='aspect-square h-full max-w-full' alt='todo' />
 
 					<span
 						class='captitalize absolute left-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
@@ -32,7 +32,7 @@ import Button from './Button.astro';
 					>
 				</div>
 				<div slot='second'>
-					<img src={vac.src} class='aspect-square h-full w-auto' alt='todo' />
+					<img src={vac.src} class='aspect-square h-full max-w-full' alt='todo' />
 
 					<span
 						class='captitalize absolute right-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
@@ -42,15 +42,15 @@ import Button from './Button.astro';
 			</img-comparison-slider>
 
 			<img-comparison-slider class='slider-example-focus relative aspect-square drop-shadow-lg'>
-				<div slot='first' class='aspect-square size-full'>
-					<img src={gutter.src} class='aspect-square h-full w-auto' alt='todo' />
+				<div slot='first' class=''>
+					<img src={gutter.src} class='aspect-square h-full max-w-full' alt='todo' />
 					<span
 						class='captitalize absolute left-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
 						>Before</span
 					>
 				</div>
 				<div slot='second' class='aspect-square size-full'>
-					<img src={vac.src} class='aspect-square h-full w-auto object-cover' alt='todo' />
+					<img src={vac.src} class='aspect-square h-auto max-w-full' alt='todo' />
 					<span
 						class='captitalize absolute right-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
 						>After</span
@@ -59,15 +59,15 @@ import Button from './Button.astro';
 			</img-comparison-slider>
 
 			<img-comparison-slider class='slider-example-focus relative aspect-square drop-shadow-lg'>
-				<div slot='first' class='slider-example-focus aspect-square size-full'>
-					<Image src={ute} class='aspect-square h-full w-auto' alt='todo' />
+				<div slot='first' class='slider-example-focus'>
+					<Image src={ute} class='aspect-square h-full max-w-full' alt='todo' />
 					<span
 						class='captitalize absolute left-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
 						>Before</span
 					>
 				</div>
 				<div slot='second'>
-					<img src={vac.src} class='aspect-square h-full w-auto object-cover' alt='todo' />
+					<img src={vac.src} class='aspect-square h-full max-w-full object-cover' alt='todo' />
 					<span
 						class='captitalize absolute right-2 top-2/4 bg-white px-1 text-base font-semibold text-gray-900 opacity-70'
 						>After</span
