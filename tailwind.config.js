@@ -15,6 +15,10 @@ export default {
 			},
 			backgroundImage: {
 				slide1: "url('./src/assets/images/vacuum-system.jpg')"
+			},
+			screens: {
+				tab: '956px',
+				smMob: '350px'
 			}
 		}
 	},

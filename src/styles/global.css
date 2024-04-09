@@ -29,7 +29,7 @@
 	  }
 	
 	  .h2 {
-		@apply text-2xl font-bold tracking-tight capitalize md:text-4xl;
+		@apply text-3xl font-bold tracking-tight capitalize md:text-4xl;
 	  }
 
 	  .h3 {
@@ -67,6 +67,6 @@
 
 	.hero-overlay {
 		background-color: transparent;
-		opacity: 0.7;
+		opacity: 0.75;
 	}
 }
