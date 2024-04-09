@@ -52,8 +52,8 @@ const footerHeadings: FooterHeading[] = [
 <!-- FOOTER -->
 <footer class='bg-primary'>
 	<div class='mx-auto max-w-7xl px-6 text-default lg:px-8'>
-		<div class='pb-4 pt-16'>
-			<div class='grid items-center justify-stretch tab:flex tab:justify-between'>
+		<div class='pt-16 tab:pb-4'>
+			<div class='grid items-center tab:flex tab:justify-between'>
 				<div class='flex flex-col items-center tab:max-w-xs tab:items-start'>
 					<a href='./index.html' aria-label='home' class=''>
 						<Image src={Logo} width={150} alt='logo' />
@@ -65,15 +65,15 @@ const footerHeadings: FooterHeading[] = [
 
 					<div class='mt-4 flex items-center justify-start gap-2'>
 						<a
-							href='https://www.facebook.com/profile.php?id=100091895966657'
-							aria-label='Kangas Facebook'
+							href='https://www.facebook.com'
+							aria-label='Gutter Gladiators Facebook'
 							class='cursor-pointer hover:text-slate-400'
 						>
 							<Icon name='facebook' class='text-4xl' />
 						</a>
 
 						<a
-							href='https://www.instagram.com/kangas_exterior_solutions/?hl=en'
+							href='https://www.instagram.com'
 							aria-label='Kangas Instagram'
 							class='cursor-pointer hover:text-slate-400'
 						>
@@ -82,28 +82,26 @@ const footerHeadings: FooterHeading[] = [
 					</div>
 				</div>
 
-				<nav class='hidden md:col-span-3 md:col-start-3 md:max-w-none tab:block'>
-					<div role='list' class='flex justify-stretch text-default md:gap-8 lg:gap-12 xl:gap-16'>
-						{
-							footerHeadings.map((heading) => (
-								<ul class='flex flex-col last:mb-2   '>
-									<li class='mb-4 text-xl font-semibold'>{heading.title}</li>
-									{heading.links.map((link) => (
-										<li class=' mt-2  items-center gap-1 break-words text-base *:inline-flex '>
-											{link.icon && <Icon name={link.icon} class='text-2xl' />}
-											{link.href ? (
-												<a class='break-words' href={link.href}>
-													{link.title}
-												</a>
-											) : (
-												link.title
-											)}
-										</li>
-									))}
-								</ul>
-							))
-						}
-					</div>
+				<nav class='hidden justify-end gap-16 text-default md:max-w-none tab:flex'>
+					{
+						footerHeadings.map((heading) => (
+							<ul class='flex flex-col   '>
+								<li class='mb-4 text-xl font-semibold'>{heading.title}</li>
+								{heading.links.map((link) => (
+									<li class=' mt-2  items-center  gap-2 text-base *:inline-flex '>
+										{link.icon && <Icon name={link.icon} class='text-2xl' />}
+										{link.href ? (
+											<a class='' href={link.href}>
+												{link.title}
+											</a>
+										) : (
+											link.title
+										)}
+									</li>
+								))}
+							</ul>
+						))
+					}
 				</nav>
 
 				<div class='mx-auto mt-2 w-full tab:hidden'>
@@ -133,7 +131,7 @@ const footerHeadings: FooterHeading[] = [
 			</div>
 
 			<div
-				class='text-md mb-4 flex flex-wrap items-end justify-between gap-x-6 pt-6 tab:mt-16 tab:border-t tab:border-black'
+				class='text-md flex flex-wrap items-end justify-between gap-x-6 py-4 tab:border-t tab:border-black'
 			>
 				<p>
 					Copyright © <span>{new Date().getFullYear()}</span>
