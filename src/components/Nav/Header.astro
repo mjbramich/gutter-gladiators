@@ -90,7 +90,7 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 		</div>
 	</div>
 	<nav
-		class='relative hidden size-full flex-1 touch-none items-center justify-center overflow-y-auto py-2 text-2xl text-default drop-shadow-2xl md:flex md:w-full md:overflow-x-auto md:overflow-y-visible md:text-lg'
+		class='relative hidden size-full flex-1 items-center justify-center overflow-y-auto py-2 text-2xl text-default drop-shadow-2xl md:flex md:w-full md:overflow-x-auto md:overflow-y-visible md:text-lg'
 		aria-label='Main navigation'
 	>
 		<ul
@@ -143,6 +143,7 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 			header?.classList.add('h-dvh', 'expanded');
 			hamburgerBtn?.classList.add('expanded');
 			navContent?.classList.remove('fade-out', 'hidden');
+			navContent?.classList.add('touch-none');
 			// ul?.classList.remove('fade-out');
 			navContent?.classList.add('fade-in');
 			// ul?.classList.add('fade-in');
@@ -153,15 +154,15 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 			header?.classList.remove('expanded', 'overflow-hidden');
 			document.body.classList.remove('overflow-hidden');
 			navContent?.classList.remove('fade-in');
+			navContent?.classList.remove('touch-none');
+
 			// ul?.classList.remove('fade-in');
 			// ul?.classList.add('fade-out');
 			navContent?.classList.add('fade-out');
 			header!.onanimationend = (e) => {
 				if (e.animationName === 'fade-out') {
-					console.log(e, 'Animation end');
 					header?.classList.remove('h-dvh');
 					navContent?.classList.add('hidden');
-					console.log(ul);
 				}
 			};
 		}
