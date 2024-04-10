@@ -41,7 +41,7 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 	{...id ? { id } : {}}
 >
 	<Announcement
-		text={['Licensed Plumbers', 'Licensed working at heights', 'Police Checked']}
+		text={['Fully insured', 'Licensed working at heights', 'Police Checked']}
 		location='Servicing the North-West Coast of Tasmania'
 	/>
 
@@ -100,7 +100,7 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 		>
 			{
 				links.map(({ text, href }, i) => (
-					<NavLink href={href} text={text} class={[`${i === 4 ? 'border-none' : ''}`]} />
+					<NavLink href={href} text={text} class={`${i === 4 ? 'border-none' : ''}`} />
 				))
 			}
 
