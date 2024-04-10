@@ -140,7 +140,7 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 
 		function openNav() {
 			document.body.classList.add('overflow-hidden');
-			ul.classList.remove('hidden');
+			ul?.classList.remove('hidden');
 			header?.classList.add('h-dvh', 'expanded');
 			hamburgerBtn?.classList.add('expanded');
 			navContent?.classList.remove('fade-out', 'hidden');
@@ -157,7 +157,7 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 				if (e.animationName === 'fade-out') {
 					console.log(e, 'Animation end');
 					header?.classList.remove('h-dvh');
-					ul.classList.add('hidden');
+					ul?.classList.add('hidden');
 					console.log(ul);
 				}
 			};
