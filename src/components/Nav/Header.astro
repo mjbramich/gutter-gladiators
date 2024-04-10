@@ -6,6 +6,7 @@ import Button from '@components/Button.astro';
 import NavLink from '@components/Nav/NavLink.astro';
 import Toggle from '@components/Nav/Toggle.astro';
 import { Image, Picture } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 
 interface Link {
 	text: string;
@@ -35,7 +36,7 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 <!--class:List is clsx -->
 <header
 	class:list={[
-		' z-40 mx-auto w-full  shadow transition-all duration-500 ease-in-out bg-page flex flex-col'
+		' bg-base z-40 mx-auto w-full bg shadow transition-all duration-500 ease-in-out bg-white  flex flex-col'
 	]}
 	{...id ? { id } : {}}
 >
@@ -80,37 +81,48 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 
 		<div class:list={['hidden md:flex items-center  p-3 md:p-0']}>
 			<div class='flex items-center justify-between gap-4 md:w-auto'>
-				{actions.map((btnProps) => <Button {...btnProps} />)}
+				{
+					actions.map((btnProps) => (
+						<Button class='h-14 text-lg' {...btnProps}>
+							<Icon name={btnProps.icon} />
+						</Button>
+					))
+				}
 			</div>
 		</div>
 	</div>
 	<nav
-		class='bg-base relative hidden size-full flex-1 items-center justify-center overflow-y-auto py-2 text-default md:flex md:w-auto md:overflow-x-auto md:overflow-y-visible'
+		class='relative hidden size-full flex-1 items-center justify-center overflow-y-auto py-2 text-2xl text-default drop-shadow-2xl md:flex md:w-full md:overflow-x-auto md:overflow-y-visible md:text-lg'
 		aria-label='Main navigation'
 	>
 		<ul
-			class='m-auto flex w-full flex-col gap-4 py-8 text-xl font-semibold uppercase tracking-[0.01rem] *:m-auto *:grow-0 md:w-auto md:flex-row md:gap-0 md:self-center md:py-2 md:text-[0.9375rem]'
+			class='m-auto flex w-full flex-col gap-6 py-8 font-semibold uppercase *:mx-auto *:grow-0 md:w-auto md:flex-row md:gap-0 md:self-center md:py-3'
 		>
-			{links.map(({ text, href }) => <NavLink href={href} text={text} />)}
+			{
+				links.map(({ text, href }, i) => (
+					<NavLink href={href} text={text} class={[`${i === 4 ? 'border-none' : ''}`]} />
+				))
+			}
 
-			<li
-				class='mt-4 border-none px-4 font-semibold uppercase transition hover:text-primary md:hidden'
-			>
+			<li class='mt-8 px-4 font-semibold uppercase transition hover:text-primary md:hidden'>
 				Follow us
 			</li>
-			<li class='flex md:hidden'>
-				<Button
-					variant='link'
-					icon='facebook'
-					class='text-5xl text-primary hover:text-primary/80'
-					href='https://www.facebook.com/GutterGladiators'
-				/>
-				<Button
-					variant='link'
-					icon='instagram'
-					class='text-5xl text-primary hover:text-primary/80'
+			<li class='flex items-center justify-start gap-2 md:hidden'>
+				<a
+					href='https://www.facebook.com'
+					aria-label='Gutter Gladiators Facebook'
+					class='cursor-pointer hover:text-slate-400'
+				>
+					<Icon name='facebook' class='text-4xl' />
+				</a>
+
+				<a
 					href='https://www.instagram.com'
-				/>
+					aria-label='Kangas Instagram'
+					class='cursor-pointer hover:text-slate-400'
+				>
+					<Icon name='instagram' class='text-4xl' />
+				</a>
 			</li>
 		</ul>
 	</nav>
@@ -139,6 +151,7 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 		function closeNav() {
 			hamburgerBtn?.classList.remove('expanded');
 			header?.classList.remove('expanded', 'overflow-hidden');
+			document.body.classList.remove('overflow-hidden');
 			navContent?.classList.remove('fade-in');
 			navContent?.classList.add('fade-out');
 			header!.onanimationend = (e) => {
