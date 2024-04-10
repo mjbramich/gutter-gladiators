@@ -2,6 +2,7 @@
 import gutter from '@assets/images/gutters-metal-roof.jpg';
 import vac from '@assets/images/vacuum-system.jpg';
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 
 import ute from '@/assets/images/ute.jpg';
 
@@ -77,9 +78,46 @@ import Button from './Button.astro';
 			</img-comparison-slider>
 		</div>
 
-		<div class='mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row'>
-			<Button text='0400 000 000' variant='primary' icon='phone-r' class='h-14 text-lg' />
-			<Button text='Get a quote' variant='outline' icon='arrow-r' class='h-14 text-lg' />
+		<!-- <div class='mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row'>
+			<Button
+			text='0400 000 000'
+			href='tel:0400000000'
+			variant='primary'
+			class='h-14 text-lg '
+		>
+			<Icon name='phone-r' />
+		</Button>
+		<Button
+			text='Get a quote'
+			href='#contact'
+			variant='outline'
+			icon='arrow-r'
+			class='h-14  text-lg'
+		>
+			<Icon name='arrow-r' />
+		</Button>
+		</div> -->
+
+		<div
+			class='mt-12 flex w-full flex-col items-center justify-center gap-4 smMob:flex-row sm:justify-start'
+		>
+			<Button
+				text='0400 000 000'
+				href='tel:0400000000'
+				variant='primary'
+				class='w-full sm:h-14 sm:w-auto sm:text-lg'
+			>
+				<Icon name='phone-r' />
+			</Button>
+			<Button
+				text='Get a quote'
+				href='#contact'
+				variant='outline'
+				icon='arrow-r'
+				class='w-full sm:h-14 sm:w-auto sm:text-lg'
+			>
+				<Icon name='arrow-r' />
+			</Button>
 		</div>
 	</div>
 </div>

@@ -56,7 +56,7 @@ const aboutData: CardInfo[] = [
 					<Icon name='clock' class='text-3xl' />
 					<span class='sm:text-lg'> Speedy Services with great availability </span>
 				</div>
-				<div class='mt-6 hidden items-end gap-8 sm:flex'>
+				<!-- <div class='mt-6 hidden items-end gap-8 sm:flex'>
 					<Button text='0400 000 000' variant='primary' icon='phone-r' size='lg' />
 					<Button text='Get a quote' variant='outline' icon='arrow-r' size='lg' />
 				</div>
@@ -64,6 +64,28 @@ const aboutData: CardInfo[] = [
 				<div class='mt-6 flex items-end gap-4 sm:hidden lg:justify-center'>
 					<Button text='0400 000 000' variant='primary' icon='phone-r' />
 					<Button text='Get a quote' variant='outline' icon='arrow-r' />
+				</div> -->
+
+				<div
+					class='s mt-12 flex w-full flex-col items-center justify-start gap-4 smMob:flex-row sm:justify-start'
+				>
+					<Button
+						text='0400 000 000'
+						href='tel:0400000000'
+						variant='primary'
+						class='w-full sm:h-14 sm:w-auto sm:text-lg'
+					>
+						<Icon name='phone-r' />
+					</Button>
+					<Button
+						text='Get a quote'
+						href='#contact'
+						variant='outline'
+						icon='arrow-r'
+						class='w-full sm:h-14 sm:w-auto sm:text-lg'
+					>
+						<Icon name='arrow-r' />
+					</Button>
 				</div>
 			</div>
 

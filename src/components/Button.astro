@@ -39,8 +39,8 @@ console.log(className);
 			<span>{text}</span>
 		</button>
 	) : (
-		<a class:list={[variants[variant] || '', sizes[size], 'space-x-2']} {...rest}>
-			{icon && <Icon name={icon} class={`${className}`} />}
+		<a class:list={[variants[variant] || '', sizes[size], 'space-x-2', className]} {...rest}>
+			<slot />
 			<span>{text}</span>
 		</a>
 	)

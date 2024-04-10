@@ -3,6 +3,8 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 
+import { Icon } from 'astro-icon/components';
+
 import fascia from '@/assets/images/fascia.jpg';
 import metalRoof from '@/assets/images/gutters-metal-roof.jpg';
 import ute from '@/assets/images/ute.jpg';
@@ -71,11 +73,12 @@ import Button from './Button.astro';
 		<Button
 			data-aos='fade-up'
 			data-aos-delay='.8'
-			variant='primary'
-			size='lg'
+			variant='outline'
 			href='https://www.facebook.com/GutterGladiators'
-			text='Contact'
-		/>
+			class='h-14 border-white text-lg text-white hover:bg-white hover:text-default'
+			text='Contact us '
+			><Icon name='arrow-r' />
+		</Button>
 	</div>
 </div>
 
