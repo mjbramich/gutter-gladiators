@@ -144,7 +144,9 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 			header?.classList.add('h-dvh', 'expanded');
 			hamburgerBtn?.classList.add('expanded');
 			navContent?.classList.remove('fade-out', 'hidden');
+			// ul?.classList.remove('fade-out');
 			navContent?.classList.add('fade-in');
+			// ul?.classList.add('fade-in');
 		}
 
 		function closeNav() {
@@ -152,12 +154,14 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 			header?.classList.remove('expanded', 'overflow-hidden');
 			document.body.classList.remove('overflow-hidden');
 			navContent?.classList.remove('fade-in');
+			// ul?.classList.remove('fade-in');
+			// ul?.classList.add('fade-out');
 			navContent?.classList.add('fade-out');
 			header!.onanimationend = (e) => {
 				if (e.animationName === 'fade-out') {
 					console.log(e, 'Animation end');
 					header?.classList.remove('h-dvh');
-					ul?.classList.add('hidden');
+					navContent?.classList.add('hidden');
 					console.log(ul);
 				}
 			};
