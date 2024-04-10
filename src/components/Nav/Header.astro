@@ -131,8 +131,8 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 		const header = document.getElementById('header');
 		const navContent = document.querySelector('#header nav');
 		const hamburgerBtn = document.querySelector('[data-toggle-menu]');
+		const ul = document.querySelector('nav ul');
 		let isOpen = false;
-
 		const toggleNav = () => {
 			isOpen ? closeNav() : openNav();
 			isOpen = !isOpen;
@@ -140,6 +140,7 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 
 		function openNav() {
 			document.body.classList.add('overflow-hidden');
+			ul.classList.remove('hidden');
 			header?.classList.add('h-dvh', 'expanded');
 			hamburgerBtn?.classList.add('expanded');
 			navContent?.classList.remove('fade-out', 'hidden');
@@ -156,6 +157,8 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 				if (e.animationName === 'fade-out') {
 					console.log(e, 'Animation end');
 					header?.classList.remove('h-dvh');
+					ul.classList.add('hidden');
+					console.log(ul);
 				}
 			};
 		}
@@ -176,13 +179,15 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 		};
 	}
 
-	(function init() {
+	function init() {
 		const { toggleNav, handleResize } = mobileMenu();
 		const navBtn = document.querySelector('[data-toggle-menu]');
 		const screenSize = window.matchMedia('(max-width: 767px)');
 		navBtn?.addEventListener('click', () => toggleNav());
 		screenSize.addEventListener('change', () => handleResize());
-	})();
+	}
+	init();
+	document.addEventListener('astro:after-swap', init);
 </script>
 
 <style>
