@@ -35,9 +35,7 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 
 <!--class:List is clsx -->
 <header
-	class:list={[
-		' bg-base z-40 mx-auto w-full bg shadow transition-all duration-500 ease-in-out bg-white  flex flex-col'
-	]}
+	class:list={[' bg-base z-40 mx-auto w-full bg shadow  bg-white  flex flex-col']}
 	{...id ? { id } : {}}
 >
 	<Announcement
@@ -96,7 +94,7 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 		aria-label='Main navigation'
 	>
 		<ul
-			class='m-auto flex w-full flex-col gap-6 py-8 font-semibold uppercase *:mx-auto *:grow-0 md:w-auto md:flex-row md:gap-0 md:self-center md:py-3'
+			class='m-auto flex w-full flex-col gap-6 py-8 font-semibold uppercase *:mx-auto md:w-auto md:flex-row md:gap-0 md:self-center md:py-3'
 		>
 			{
 				links.map(({ text, href }, i) => (
@@ -156,6 +154,7 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 			navContent?.classList.add('fade-out');
 			header!.onanimationend = (e) => {
 				if (e.animationName === 'fade-out') {
+					console.log(e, 'Animation end');
 					header?.classList.remove('h-dvh');
 				}
 			};
