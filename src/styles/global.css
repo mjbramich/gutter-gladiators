@@ -20,6 +20,11 @@
 		--text-default: rgb(16 16 16);
 		--text-muted: rgb(16 16 16 / 66%);
 	}
+
+	html {
+		@apply scroll-smooth;
+}
+
 }
 
 @layer components {
