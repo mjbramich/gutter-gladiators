@@ -1,9 +1,9 @@
 ---
 import About from '@components/About.astro';
 import CallToAction from '@components/CallToAction.astro';
+import Contact from '@components/Contact.astro';
 import Features from '@components/Features.astro';
 import Footer from '@components/Footer.astro';
-import Form from '@components/Form.astro';
 import Hero from '@components/Hero.astro';
 import Header, { type ActionLink } from '@components/Nav/Header.astro';
 import Stats from '@components/Stats.astro';
@@ -22,9 +22,9 @@ import Layout from '../layouts/Layout.astro';
 const links = [
 	{ text: 'Home', href: '/' },
 	{ text: 'About', href: '#about' },
-	{ text: 'Services', href: '#about' },
-	{ text: 'Work', href: '#about' },
-	{ text: 'Contact', href: '#about' }
+	{ text: 'Services', href: '#services' },
+	{ text: 'Work', href: '#work' },
+	{ text: 'Contact', href: '#contact' }
 ];
 
 const actions: ActionLink[] = [
@@ -43,7 +43,7 @@ const actions: ActionLink[] = [
 		<Work />
 		<CallToAction />
 		<Testimonials />
-		<Form />
+		<Contact />
 		<Footer />
 		<!-- <Button variant='primary' href="/home" target="/hello" type="button"  >Hello</Button>
 		<Button variant='secondary' href="/home" target="/hello" s>Hello</Button>

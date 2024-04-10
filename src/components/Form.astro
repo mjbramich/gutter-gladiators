@@ -1,144 +1,127 @@
 ---
-/**
- * * Long contact form to get details about a customer's project. Modify as needed
- *
- * Form inputs are styled in "global.scss" as form__input, so you can use them elsewhere on the site
- */
-
-// components
 import Button from '@components/Button.astro';
 ---
 
-<section id='contact' class='bg-base'>
-	<div class='container mx-auto max-w-3xl'>
-		<h2 class='h1 text-center'>Request a Quote</h2>
-		<p class='description mt-6 text-center'>
-			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat nulla, porro nam fugit omnis
-			excepturi ipsam ipsum molestias recusandae quam vitae. Asperiores et ea nisi, sequi a
-			quibusdam iure expedita!
-		</p>
-		<form id='contact-form' name='contact form' class='mt-4 flex flex-col gap-4'>
-			<input type='hidden' name='form-name' value='contact' />
-			<div>
-				<div class='mt-10 grid gap-4 sm:grid-cols-2'>
-					<div class='flex flex-col'>
-						<label for='contact-fname' class='form__label sr-only'
-							>First Name <span class='text-red-600'>*</span></label
-						>
-						<input
-							type='text'
-							class='form__input'
-							name='fname'
-							id='contact-fname'
-							placeholder='First name'
-							required
-						/>
-					</div>
+<form id='contact-form' name='contact form' class='mt-4 flex flex-col gap-4'>
+	<input type='hidden' name='form-name' value='contact' />
 
-					<div class='flex flex-col'>
-						<label for='contact-lname' class='form__label sr-only'
-							>Last Name <span class='text-red-600'>*</span></label
-						>
-						<input
-							type='text'
-							class='form__input'
-							name='lname'
-							id='contact-lname'
-							placeholder='Last name'
-							required
-						/>
-					</div>
-				</div>
-			</div>
-			<div>
-				<label for='contact-address' class='form__label sr-only mb-1'
-					>Street Address <span class='text-red-600'>*</span></label
-				>
-				<input
-					type='text'
-					class='form__input'
-					name='address'
-					id='contact-address'
-					placeholder='Address'
-					required
-				/>
-			</div>
+	<div class='mt-10 grid gap-4 sm:grid-cols-2'>
+		<div class='flex flex-col'>
+			<label for='contact-fname' class='form__label sr-only'
+				>First Name <span class='text-red-600'>*</span></label
+			>
+			<input
+				type='text'
+				class='form__input'
+				name='fname'
+				id='contact-fname'
+				placeholder='First name'
+				required
+			/>
+		</div>
 
-			<div>
-				<label for='contact-email' class='form__label sr-only mb-1'
-					>Email <span class='text-red-600'>*</span></label
-				>
-				<input
-					type='email'
-					class='form__input'
-					name='email'
-					id='contact-email'
-					inputmode='email'
-					placeholder='Email'
-					required
-				/>
-			</div>
-			<div>
-				<label for='contact-phone' class='form__label sr-only mb-1'
-					>Phone Number <span class='text-red-600'>*</span></label
-				>
-				<input
-					type='tel'
-					class='form__input'
-					name='phone'
-					id='contact-phone'
-					inputmode='tel'
-					placeholder='Phone number'
-					required
-				/>
-			</div>
-			<div>
-				<label for='contact-services' class='form__label sr-only mb-1'
-					>Services Desired <span class='text-red-600'>*</span></label
-				>
-				<textarea
-					name='services'
-					class='form__input'
-					id='contact-services'
-					rows='4'
-					placeholder='Please provide a brief description of the services desired'
-					required></textarea>
-			</div>
-
-			<div class='flex gap-x-4 sm:col-span-2'>
-				<div class='flex h-6 items-center'>
-					<!-- Enabled: "bg-kangakangablue", Not Enabled: "bg-gray-200" -->
-					<button
-						type='button'
-						id='privacy-toggle-btn'
-						class='bg-base flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2'
-						role='switch'
-						aria-checked='false'
-						aria-labelledby='switch-1-label'
-					>
-						<span class='sr-only'>Agree to policies</span>
-						<!-- Enabled: "translate-x-3.5", Not Enabled: "translate-x-0" -->
-						<span
-							aria-hidden='true'
-							id='privacy-slider'
-							class='size-4 translate-x-0 rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out'
-						></span>
-					</button>
-				</div>
-				<label class='text-sm leading-6 text-gray-600' id='switch-1-label'>
-					By selecting this, you agree to our
-					<a
-						href='./privacy.html'
-						class='focus-visible:outline-kangablue font-semibold text-gray-900 underline'
-						>Privacy Policy</a
-					>.
-				</label>
-			</div>
-
-			<Button variant='primary' type='submit' id='form-submit' class="'rounded-sm">Submit</Button>
-		</form>
+		<div class='flex flex-col'>
+			<label for='contact-lname' class='form__label sr-only'
+				>Last Name <span class='text-red-600'>*</span></label
+			>
+			<input
+				type='text'
+				class='form__input'
+				name='lname'
+				id='contact-lname'
+				placeholder='Last name'
+				required
+			/>
+		</div>
 	</div>
-</section>
+
+	<div>
+		<label for='contact-address' class='form__label sr-only mb-1'
+			>Street Address <span class='text-red-600'>*</span></label
+		>
+		<input
+			type='text'
+			class='form__input'
+			name='address'
+			id='contact-address'
+			placeholder='Address'
+			required
+		/>
+	</div>
+
+	<div>
+		<label for='contact-email' class='form__label sr-only mb-1'
+			>Email <span class='text-red-600'>*</span></label
+		>
+		<input
+			type='email'
+			class='form__input'
+			name='email'
+			id='contact-email'
+			inputmode='email'
+			placeholder='Email'
+			required
+		/>
+	</div>
+	<div>
+		<label for='contact-phone' class='form__label sr-only mb-1'
+			>Phone Number <span class='text-red-600'>*</span></label
+		>
+		<input
+			type='tel'
+			class='form__input'
+			name='phone'
+			id='contact-phone'
+			inputmode='tel'
+			placeholder='Phone number'
+			required
+		/>
+	</div>
+	<div>
+		<label for='contact-services' class='form__label sr-only mb-1'
+			>Services Desired <span class='text-red-600'>*</span></label
+		>
+		<textarea
+			name='services'
+			class='form__input'
+			id='contact-services'
+			rows='4'
+			placeholder='Please provide a brief description of the services desired'
+			required></textarea>
+	</div>
+
+	<div class='flex gap-x-4 sm:col-span-2'>
+		<div class='flex h-6 items-center'>
+			<!-- Enabled: "bg-kangakangablue", Not Enabled: "bg-gray-200" -->
+			<button
+				type='button'
+				id='privacy-toggle-btn'
+				class='bg-base flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2'
+				role='switch'
+				aria-checked='false'
+				aria-labelledby='switch-1-label'
+			>
+				<span class='sr-only'>Agree to policies</span>
+				<!-- Enabled: "translate-x-3.5", Not Enabled: "translate-x-0" -->
+				<span
+					aria-hidden='true'
+					id='privacy-slider'
+					class='size-4 translate-x-0 rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out'
+				></span>
+			</button>
+		</div>
+		<label class='text-sm leading-6 text-gray-600' id='switch-1-label'>
+			By selecting this, you agree to our
+			<a
+				href='./privacy.html'
+				class='focus-visible:outline-kangablue font-semibold text-gray-900 underline'
+				>Privacy Policy</a
+			>.
+		</label>
+	</div>
+
+	<Button variant='primary' type='submit' id='form-submit' class="'rounded-sm">Submit</Button>
+</form>
 
 <script>
 	const privacySlider = () => {

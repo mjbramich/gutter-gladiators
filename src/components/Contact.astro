@@ -1,0 +1,64 @@
+---
+import Form from './Form.astro';
+---
+
+<section id='contact' class='bg-base'>
+	<div class='container mx-auto max-w-3xl'>
+		<h2 class='h1 text-center'>Request a Quote</h2>
+		<p class='description mt-6 text-center'>
+			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat nulla, porro nam fugit omnis
+			excepturi ipsam ipsum molestias recusandae quam vitae. Asperiores et ea nisi, sequi a
+			quibusdam iure expedita!
+		</p>
+
+		<Form />
+	</div>
+</section>
+
+<script>
+	const privacySlider = () => {
+		const privacyToggle: HTMLElement | null = document.querySelector('#privacy-toggle-btn');
+		const privacySlider = document.querySelector('#privacy-slider');
+
+		let privacyEnabled = false;
+
+		privacyToggle!.onclick = () => {
+			privacyEnabled = !privacyEnabled;
+
+			if (privacyEnabled) {
+				privacyToggle?.classList.add('bg-primary');
+				privacyToggle?.classList.remove('bg-base');
+				privacySlider?.classList.add('translate-x-3.5');
+				privacySlider?.classList.remove('translate-x-0');
+				privacyToggle?.setAttribute('aria-checked', 'true');
+			} else {
+				privacyToggle?.classList.remove('bg-primary');
+				privacyToggle?.classList.add('bg-base');
+				privacySlider?.classList.remove('translate-x-3.5');
+				privacySlider?.classList.add('translate-x-0');
+				privacyToggle?.setAttribute('aria-checked', 'false');
+			}
+		};
+	};
+
+	const privacyCheck = () => {
+		const submitButton = document.getElementById('form-submit');
+		const privacyToggle = document.getElementById('privacy-toggle-btn');
+
+		// check if the privacy toggle button is checked
+		function isPrivacyPolicyAccepted() {
+			return privacyToggle?.getAttribute('aria-checked') === 'true';
+		}
+
+		// E
+		submitButton!.onclick = (event) => {
+			if (!isPrivacyPolicyAccepted()) {
+				event.preventDefault(); // Prevent form submission if privacy policy is not accepted
+				alert('Please agree to the privacy policy before submitting.');
+			}
+		};
+	};
+
+	privacySlider();
+	privacyCheck();
+</script>
