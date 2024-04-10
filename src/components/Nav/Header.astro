@@ -140,7 +140,6 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 
 		function openNav() {
 			document.body.classList.add('overflow-hidden');
-			ul?.classList.remove('hidden');
 			header?.classList.add('h-dvh', 'expanded');
 			hamburgerBtn?.classList.add('expanded');
 			navContent?.classList.remove('fade-out', 'hidden');
