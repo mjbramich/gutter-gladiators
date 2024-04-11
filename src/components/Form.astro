@@ -90,6 +90,28 @@ import Button from '@components/Button.astro';
 			required></textarea>
 	</div>
 
+	<div class='bg-light w-full rounded-sm p-2.5 shadow transition'>
+		<label class='text-base text-gray-400'>Does your property have gutter guard installed?</label>
+		<fieldset class='mt-2'>
+			<div class='space-y-4 sm:flex sm:items-center sm:space-x-10 sm:space-y-0'>
+				<div class='flex items-center'>
+					<input id='yes' name='notification-method' type='radio' class='size-4 accent-black' />
+					<label for='yes' class='ml-3 block text-sm leading-6 text-gray-400'>Yes</label>
+				</div>
+				<div class='flex items-center'>
+					<input
+						id='no'
+						name='notification-method'
+						type='radio'
+						checked
+						class='size-4 accent-black'
+					/>
+					<label for='no' class='ml-3 block text-sm leading-6 text-gray-400'>No</label>
+				</div>
+			</div>
+		</fieldset>
+	</div>
+
 	<div class='flex gap-x-4 sm:col-span-2'>
 		<div class='flex h-6 items-center'>
 			<!-- Enabled: "bg-kangakangablue", Not Enabled: "bg-gray-200" -->
@@ -110,6 +132,7 @@ import Button from '@components/Button.astro';
 				></span>
 			</button>
 		</div>
+
 		<label class='text-sm leading-6 text-gray-600' id='switch-1-label'>
 			By selecting this, you agree to our
 			<a
@@ -119,7 +142,6 @@ import Button from '@components/Button.astro';
 			>.
 		</label>
 	</div>
-
 	<Button variant='primary' type='submit' id='form-submit' class="'rounded-sm">Submit</Button>
 </form>
 
