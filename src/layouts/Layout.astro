@@ -3,6 +3,8 @@
 
 import '@/styles/global.css';
 
+import ScrollBtn from '@components/ScrollBtn.astro';
+
 interface Props {
 	title: string;
 }
@@ -23,6 +25,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
+		<ScrollBtn />
 	</body>
 </html>
 
