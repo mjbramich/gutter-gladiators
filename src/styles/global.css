@@ -52,6 +52,7 @@
 	  .form__input {
 		@apply w-full rounded-sm shadow bg-light p-2.5 transition;
 		@apply focus-visible:border-primary focus-visible:ring-1 focus-visible:ring-primary;
+		-webkit-appearance: none;
 	  }
 	
 
