@@ -164,7 +164,6 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 		}
 
 		// Close mobile menu on resize
-
 		function handleResize() {
 			closeNav();
 			isOpen = false;
@@ -175,16 +174,19 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 
 		return {
 			toggleNav,
-			handleResize
+			handleResize,
+			closeNav
 		};
 	}
 
 	function init() {
-		const { toggleNav, handleResize } = mobileMenu();
+		const { toggleNav, handleResize, closeNav } = mobileMenu();
 		const navBtn = document.querySelector('[data-toggle-menu]');
+		const navContent = document.querySelector('#header nav');
 		const screenSize = window.matchMedia('(max-width: 767px)');
 		navBtn?.addEventListener('click', () => toggleNav());
 		screenSize.addEventListener('change', () => handleResize());
+		navContent?.addEventListener('click', () => handleResize());
 	}
 	init();
 	document.addEventListener('astro:after-swap', init);
