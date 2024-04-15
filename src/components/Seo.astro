@@ -1,0 +1,46 @@
+---
+import siteData from '@config/siteData';
+import { SEO } from 'astro-seo';
+
+const { title, description, noindex = false } = Astro.props;
+
+function trimEndSlash(str: string) {
+	if (str[str.length - 1] === '/') {
+		return str.slice(0, -1);
+	}
+	return str;
+}
+
+// put together the image URL
+const imageUrl = trimEndSlash(Astro.site?.toString() || '') + siteData.defaultImage.src;
+---
+
+<SEO
+	title={title}
+	description={description}
+	openGraph={{
+		basic: {
+			title,
+			type: 'website',
+			image: imageUrl
+		},
+		optional: {
+			description,
+			siteName: siteData.title
+		},
+		image: {
+			type: 'image/webp',
+			width: '1200',
+			height: '630',
+			alt: title
+		}
+	}}
+	twitter={{
+		card: 'summary_large_image',
+		title,
+		description,
+		image: imageUrl
+	}}
+	noindex={noindex}
+	nofollow={noindex}
+/>
