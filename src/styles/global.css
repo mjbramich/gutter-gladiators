@@ -17,44 +17,41 @@
 		--gg-accent-color: 2 255 255;
 		--bg-primary: #f7f6f4;
 		--bg-secondary: #ffffff;
-		--text-default: rgb(16 16 16);
+		--text-default: 16 16 16;
 		--text-muted: rgb(16 16 16 / 66%);
 	}
 
 	html {
 		@apply scroll-smooth;
-}
-
+	}
 }
 
 @layer components {
-
 	.h1 {
-		@apply text-3xl font-bold tracking-tight capitalize  md:text-5xl ;
-	  }
-	
-	  .h2 {
+		@apply text-3xl font-bold tracking-tight capitalize  md:text-5xl;
+	}
+
+	.h2 {
 		@apply text-3xl font-bold tracking-tight capitalize md:text-4xl;
-	  }
+	}
 
-	  .h3 {
+	.h3 {
 		@apply text-xl font-semibold tracking-tight md:text-3xl;
-	  }
+	}
 
-	  .description {
-		@apply  lg:text-lg ;
-	  }
+	.description {
+		@apply lg:text-lg;
+	}
 
-	  .container {
+	.container {
 		@apply mx-auto max-w-7xl px-6 lg:px-8 py-16 lg:py-24;
-	  }
+	}
 
-	  .form__input {
+	.form__input {
 		@apply w-full rounded-sm shadow bg-light p-2.5 transition;
 		@apply focus-visible:border-primary focus-visible:ring-1 focus-visible:ring-primary;
 		-webkit-appearance: none;
-	  }
-	
+	}
 
 	.bg-base {
 		background-color: var(--bg-primary);
