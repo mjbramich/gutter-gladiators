@@ -1,0 +1,43 @@
+---
+// component imports
+import Seo from '@components/Seo.astro';
+// data
+import siteData from '@config/siteData';
+import type { ImageMetadata } from 'astro';
+import { ViewTransitions } from 'astro:transitions';
+
+export interface Props {
+	title: string;
+	description: string;
+	image?: ImageMetadata;
+	noindex?: boolean;
+}
+
+const { title, description, image, noindex = false } = Astro.props;
+---
+
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width' initial-scale='1.0' />
+
+<!-- Fonts -->
+
+<!-- Favicons. Generated from https://realfavicongenerator.net/ -->
+<link rel='apple-touch-icon' sizes='180x180' href='/favicons/apple-touch-icon.png' />
+<link rel='icon' type='image/png' sizes='32x32' href='/favicons/favicon-32x32.png' />
+<link rel='icon' type='image/png' sizes='16x16' href='/favicons/favicon-16x16.png' />
+<link rel='manifest' href='/favicons/site.webmanifest' />
+<link rel='mask-icon' href='/favicons/safari-pinned-tab.svg' color='#5bbad5' />
+<link rel='shortcut icon' href='/favicons/favicon.ico' />
+<meta name='msapplication-TileColor' content='#da532c' />
+<meta name='msapplication-config' content='/favicons/browserconfig.xml' />
+<meta name='theme-color' content='#ffffff' />
+<meta name='generator' content={Astro.generator} />
+
+<!-- other -->
+<meta name='generator' content={Astro.generator} />
+<link rel='sitemap' href='/sitemap-index.xml' />
+
+<Seo title={title} description={description} image={image} noindex={noindex} />
+
+<!-- no fallback as I saw issues with firefox fallback -->
+{siteData.useViewTransitions && <ViewTransitions fallback='none' />}
