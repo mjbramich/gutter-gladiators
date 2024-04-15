@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 
 import Logo from '@/assets/images/gglogo.png';
@@ -22,16 +21,16 @@ const footerHeadings: FooterHeading[] = [
 		title: 'Company',
 		links: [
 			{ title: 'Home', href: '/' },
-			{ title: 'About', href: '/#about' },
-			{ title: 'Contact', href: '/contact' }
+			{ title: 'About', href: '#about' },
+			{ title: 'Contact', href: '#contact' }
 		]
 	},
 	{
 		title: 'Services',
 		links: [
-			{ title: 'Gutter Cleaning', href: '/#services' },
-			{ title: 'Vacuum Gutter Cleaning', href: '/#services' },
-			{ title: 'Solar Panel Cleaning', href: '/#services' }
+			{ title: 'Gutter Cleaning', href: '#gutter-cleaning' },
+			{ title: 'Solar Panel Cleaning', href: '#solar-panel-cleaning' },
+			{ title: 'Vacuum Gutter Cleaning', href: '#vacuum-gutter-cleaning' }
 		]
 	},
 	{
@@ -55,8 +54,9 @@ const footerHeadings: FooterHeading[] = [
 		<div class='pt-16'>
 			<div class='grid items-center tab:flex tab:justify-between tab:pb-4'>
 				<div class='flex flex-col items-center tab:max-w-xs tab:items-start'>
-					<a href='./index.html' aria-label='home' class=''>
-						<Image src={Logo} width={150} alt='logo' />
+					<a href='/' aria-label='home' class=''>
+						<!-- <Image src={Logo} width={150} alt='logo' /> -->
+						<img src={Logo.src} alt='Gutter Guardians Logo' class='w-[150px]' />
 					</a>
 					<p class='mt-4 max-w-md text-center tab:text-start'>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates nisi tempora non
@@ -67,7 +67,7 @@ const footerHeadings: FooterHeading[] = [
 						<a
 							href='https://www.facebook.com'
 							aria-label='Gutter Gladiators Facebook'
-							class='cursor-pointer hover:text-slate-400'
+							class='cursor-pointer hover:text-white'
 						>
 							<Icon name='facebook' class='text-4xl' />
 						</a>
@@ -75,7 +75,7 @@ const footerHeadings: FooterHeading[] = [
 						<a
 							href='https://www.instagram.com'
 							aria-label='Kangas Instagram'
-							class='cursor-pointer hover:text-slate-400'
+							class='cursor-pointer hover:text-white'
 						>
 							<Icon name='instagram' class='text-4xl' />
 						</a>
@@ -88,10 +88,10 @@ const footerHeadings: FooterHeading[] = [
 							<ul class='flex flex-col   '>
 								<li class='mb-4 text-xl font-semibold'>{heading.title}</li>
 								{heading.links.map((link) => (
-									<li class=' mt-2  items-center  gap-2 text-base *:inline-flex '>
+									<li class=' mt-2  items-center  gap-2 text-base *:inline-flex'>
 										{link.icon && <Icon name={link.icon} class='text-2xl' />}
 										{link.href ? (
-											<a class='' href={link.href}>
+											<a class='hover:text-white ' href={link.href}>
 												{link.title}
 											</a>
 										) : (
@@ -140,7 +140,7 @@ const footerHeadings: FooterHeading[] = [
 				</p>
 
 				<p class='mt-0 text-center sm:text-left'>
-					<a href='https://www.mjbramich.dev' class='hover:text-slate-400'> Created by mjbramich</a>
+					<a href='https://www.mjbramich.dev' class='hover:text-white'> Created by mjbramich</a>
 				</p>
 			</div>
 		</div>
