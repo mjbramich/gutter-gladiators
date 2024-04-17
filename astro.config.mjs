@@ -4,7 +4,6 @@ import icon from 'astro-icon';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
-
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
@@ -14,5 +13,6 @@ export default defineConfig({
 			iconDir: './src/assets/icons'
 		}),
 		sitemap()
-	]
+	],
+	site: 'http://localhost:4321'
 });
