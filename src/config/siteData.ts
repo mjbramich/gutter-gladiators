@@ -48,7 +48,7 @@ const siteData: SiteDataProps = {
 
 	// default image for meta tags if the page doesn't have an image already
 	defaultImage: {
-		src: '/src/assets/images/gglogo.png',
+		src: '/gglogo.png',
 		alt: 'Gutter Gladiators Logo'
 	}
 };
