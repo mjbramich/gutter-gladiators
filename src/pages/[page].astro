@@ -1,0 +1,42 @@
+---
+// layout
+import Layout from '@layouts/Layout.astro';
+import type { InferGetStaticPropsType } from 'astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+	const otherPages = await getCollection(
+		'otherPages',
+		({ data }) =>
+			// filter out draft pages
+			data.draft !== true
+	);
+
+	return otherPages.map((page) => ({
+		params: { page: page.slug },
+		props: { page }
+	}));
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+// type Params = InferGetStaticParamsType<typeof getStaticPaths>;
+
+const { page } = Astro.props;
+
+// convert markdown to html
+const { Content } = await page.render();
+const { title, description } = page.data;
+---
+
+<Layout title={title} description={description}>
+	<section class='container py-16 sm:py-24'>
+		<div class='bg-base-200/50 w-full rounded-xl text-center'>
+			<h1 class='h1'>{title}</h1>
+		</div>
+		<div class='mx-auto max-w-3xl'>
+			<div class='text-base-content prose mt-10 max-w-none text-sm md:text-base'>
+				<Content />
+			</div>
+		</div>
+	</section>
+</Layout>

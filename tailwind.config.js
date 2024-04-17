@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-
 // Autoprefix automatically included
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -22,5 +21,6 @@ export default {
 			}
 		}
 	},
-	plugins: []
+	// eslint-disable-next-line global-require
+	plugins: [require('@tailwindcss/typography')]
 };
