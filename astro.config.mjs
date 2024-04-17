@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import icon from 'astro-icon';
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,7 +11,8 @@ export default defineConfig({
 		tailwind(),
 		// react(),
 		icon({
-			iconDir: './src/assets/icons',
+			iconDir: './src/assets/icons'
 		}),
-	],
+		sitemap()
+	]
 });
