@@ -14,9 +14,11 @@
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.5.9",
+		"@astrojs/mdx": "^2.3.1",
 		"@astrojs/react": "^3.1.0",
 		"@astrojs/sitemap": "^3.1.3",
 		"@astrojs/tailwind": "^5.1.0",
+		"@tailwindcss/typography": "^0.5.12",
 		"@types/react": "^18.2.67",
 		"@types/react-dom": "^18.2.22",
 		"animejs": "^3.2.2",
