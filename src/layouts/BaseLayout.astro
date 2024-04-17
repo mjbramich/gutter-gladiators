@@ -3,9 +3,6 @@
 
 import '@/styles/global.css';
 
-import Footer from '@components/Footer.astro';
-import Header, { type ActionLink } from '@components/Nav/Header.astro';
-import ScrollBtn from '@components/ScrollBtn.astro';
 import type { ImageMetadata } from 'astro';
 
 import BaseHead from './BaseHead.astro';
@@ -16,25 +13,6 @@ interface Props {
 	image?: ImageMetadata;
 	noindex?: boolean; // you need to opt-in to no indexing, as it hides the page from search engines
 }
-
-const links = [
-	{ text: 'Home', href: '/' },
-	{ text: 'About', href: '#about' },
-	{ text: 'Services', href: '#services' },
-	{ text: 'Work', href: '#work' },
-	{ text: 'Contact', href: '#contact' }
-];
-
-const actions: ActionLink[] = [
-	{
-		variant: 'primary',
-		text: '0400 000 000',
-		type: 'link',
-		icon: 'phone-r',
-		href: 'tel:0400000000'
-	},
-	{ variant: 'outline', text: 'Get a quote', type: 'link', icon: 'arrow-r', href: '#contact' }
-];
 
 const { title, description, image, noindex = false } = Astro.props;
 ---
@@ -50,12 +28,10 @@ const { title, description, image, noindex = false } = Astro.props;
 		/>
 	</head>
 	<body class='bg-light'>
-		<Header links={links} actions={actions} />
 		<main>
 			<slot />
 		</main>
-		<ScrollBtn />
-		<Footer />
+
 		<script>
 			// eslint-disable-next-line
 			import AOS from '@js/aos/aos';
