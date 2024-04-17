@@ -61,7 +61,7 @@ const { title, description, image, noindex = false } = Astro.props;
 			import AOS from '@js/aos/aos';
 
 			// runs on initial page load
-			AOS.init({ once: true, duration: 0.75, distance: 15, offset: 120 });
+			AOS.init({ once: true, duration: 0.75, distance: 15, offset: 150 });
 
 			// runs on view transitions navigation
 			document.addEventListener('astro:after-swap', AOS.refreshHard);

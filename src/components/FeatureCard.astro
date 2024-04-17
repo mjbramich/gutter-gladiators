@@ -7,27 +7,33 @@ import { Image } from 'astro:assets';
 // import Button from "@components/Button.astro";
 
 interface Props {
+	id: string;
 	title: string;
 	details: string;
 	image: ImageMetadata;
 	imageSide: 'left' | 'right';
 	idx: number; //
+	fadeEffect: string;
+	fadeDelay: string;
 }
 
-const { image, title, details, imageSide } = Astro.props;
+const { id, image, title, details, imageSide, fadeEffect, fadeDelay } = Astro.props;
 ---
 
 <div
 	class='mx-auto grid max-w-2xl items-center gap-8 rounded-xl md:gap-12 lg:max-w-none lg:grid-cols-2 lg:gap-20'
+	id={id}
+	data-aos={fadeEffect}
+	data-aos-delay={fadeDelay}
 >
 	<!-- text -->
 	<div class:list={[imageSide === 'left' ? 'lg:order-last' : '', 'col-span-1 flex flex-col ']}>
-		<h2 class='h2 font-bold capitalize tracking-tight'>{title}</h2>
+		<h2 class='h2 capitalize tracking-tight'>{title}</h2>
 		<p class='description mt-4 text-gray-600'>{details}</p>
 	</div>
 
 	<!-- image -->
-	<div class=''>
-		<Image class='relative h-full max-w-full rounded object-cover' src={image} alt={title} />
+	<div class='shadow-xl'>
+		<Image class='relative h-full max-w-full rounded-sm object-cover' src={image} alt={title} />
 	</div>
 </div>
