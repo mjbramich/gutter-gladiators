@@ -10,7 +10,7 @@ export default {
 				primary: 'rgb(var(--gg-primary-color) / <alpha-value>)',
 				secondary: 'rgb(var(--gg-secondary-color) / <alpha-value> )',
 				accent: 'rgb(var(--gg-accent-color) / <alpha-value>)',
-				default: 'var(--text-default)',
+				default: 'rgb(var(--text-default) / <alpha-value>)',
 				muted: 'var(--text-muted)'
 			},
 			backgroundImage: {
