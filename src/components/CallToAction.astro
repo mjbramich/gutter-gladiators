@@ -34,20 +34,20 @@ import Button from './Button.astro';
 					</li>
 					<li>
 						<Icon name='tick' class='text-primary' />
-						<span>Prevent Pests</span>
+						<span>Reduce Pests</span>
 					</li>
 					<li>
 						<Icon name='tick' class='text-primary' />
-						<span>Prevent Pests</span>
+						<span>Prevent Water Damage</span>
 					</li>
 					<li>
 						<Icon name='tick' class='text-primary' />
-						<span>Reduce Pollution</span>
+						<span>Reduce Fire Risk </span>
 					</li>
 				</ul>
 			</div>
 			<p class='description text-center md:max-w-[500px] md:text-start'>
-				Don’t let clogged gutters cause expensive water damage. Call Gutter Gladiators today for
+				Don’t let clogged gutters cause expensive damage. Contact Gutter Gladiators today for
 				immediate gutter cleaning services and receive a complimentary roof condition report.
 			</p>
 		</div>
@@ -59,12 +59,14 @@ import Button from './Button.astro';
 				</span>
 			</div>
 			<p class='h3 text-center'>Monday - Friday</p>
-			<div class='mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row md:flex-col'>
+			<div
+				class='mt-6 flex w-full flex-col items-center justify-center gap-4 smMob:flex-row md:w-auto md:flex-col'
+			>
 				<Button
 					text='0400 000 000'
 					href='tel:0400000000'
 					variant='primary'
-					class='h-14 text-lg text-white'
+					class='h-14 w-full text-white sm:text-lg'
 				>
 					<Icon name='phone-r' />
 				</Button>
@@ -73,11 +75,33 @@ import Button from './Button.astro';
 					href='#contact'
 					variant='outline'
 					icon='arrow-r'
-					class='h-14 border-white text-lg text-white hover:bg-white hover:text-default'
+					class='h-14 w-full border-white text-white hover:bg-white hover:text-default sm:text-lg'
 				>
 					<Icon name='arrow-r' />
 				</Button>
 			</div>
+
+			<!-- <div
+				class='mt-6 flex flex-col items-center justify-center gap-4 smMob:flex-row sm:justify-center'
+			>
+				<Button
+					text='0400 000 000'
+					href='tel:0400000000'
+					variant='primary'
+					class='w-full sm:h-14 sm:w-auto sm:text-lg'
+				>
+					<Icon name='phone-r' />
+				</Button>
+				<Button
+					text='Get a quote'
+					href='#contact'
+					variant='outline'
+					icon='arrow-r'
+					class='w-full sm:h-14 sm:w-auto sm:text-lg'
+				>
+					<Icon name='arrow-r' />
+				</Button>
+			</div> -->
 		</div>
 	</div>
 </section>

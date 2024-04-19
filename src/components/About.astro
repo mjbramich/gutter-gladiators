@@ -14,28 +14,28 @@ interface CardInfo {
 
 const aboutData: CardInfo[] = [
 	{
-		icon: 'clock',
-		title: 'Working at heights certified',
+		icon: 'award',
+		title: 'State-of-the-Art Equipment',
 		content:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis provident enim voluptatum dolorem minus saepe quisquam sed est tempore perspiciati'
+			'We invest in the latest technology and equipment to deliver superior results. With advanced cleaning tools and techniques, Gutter Gladiators ensures thorough and effective cleaning for your gutters and solar panels.'
 	},
 	{
 		icon: 'clock',
-		title: 'Working at heights certified',
+		title: 'Downpipe Inspections and Repairs',
 		content:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis provident enim voluptatum dolorem minus saepe quisquam sed est tempore perspiciati'
+			'Downpipe Inspections and Repairs involve meticulous evaluation and fixing of drainage pipes, ensuring smooth water flow and preventing leaks or blockages.'
 	},
 	{
-		icon: 'clock',
-		title: 'Working at heights certified',
+		icon: 'verified',
+		title: 'Fully Licensed and insured',
 		content:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis provident enim voluptatum dolorem minus saepe quisquam sed est tempore perspiciati'
+			'Opt for our fully licensed and insured gutter cleaning and solar panel services. Our expert team ensures compliant care, providing thorough cleaning and complete liability protection for your peace of mind.'
 	},
 	{
-		icon: 'clock',
-		title: 'Working at heights certified',
+		icon: 'location',
+		title: 'Local Expertise',
 		content:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis provident enim voluptatum dolorem minus saepe quisquam sed est tempore perspiciati'
+			"We understand the unique challenges that Tasmanian homeowners face. With Gutter Gladiators, you're not just getting a service provider you're getting a trusted neighbor who is committed to your home's well-being"
 	}
 ];
 ---
@@ -48,14 +48,22 @@ const aboutData: CardInfo[] = [
 					Choose The Professionals
 				</h2>
 				<p class='mt-6 text-lg leading-8 text-gray-600'>
-					Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
-					Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+					At Gutter Gladiators, we specialise in gutter cleaning, solar panel cleaning, and exterior
+					cleaning services across the beautiful North West coast of Tasmania, including Devonport,
+					Ulverstone, Burnie, and Port Sorell.
 				</p>
 
-				<div class='mt-6 flex items-center gap-2'>
+				<p class='mt-6 text-lg leading-8 text-gray-600'>
+					Our expert team is dedicated to keeping your gutters clear, maximizing the efficiency of
+					your solar panels, and enhancing the overall appearance of your home. Trust us to deliver
+					professional and thorough cleaning solutions, ensuring your property remains in pristine
+					condition year-round.
+				</p>
+
+				<!-- <div class='mt-6 flex items-center gap-2'>
 					<Icon name='clock' class='text-3xl' />
 					<span class='sm:text-lg'> Speedy Services with great availability </span>
-				</div>
+				</div> -->
 				<!-- <div class='mt-6 hidden items-end gap-8 sm:flex'>
 					<Button text='0400 000 000' variant='primary' icon='phone-r' size='lg' />
 					<Button text='Get a quote' variant='outline' icon='arrow-r' size='lg' />
@@ -93,8 +101,9 @@ const aboutData: CardInfo[] = [
 				<Image src={Logo} alt='logo' width={300} />
 			</div>
 		</div>
+
 		<!--GRID -->
-		<div class='grid gap-4 py-16 sm:grid-cols-2 lg:grid-cols-4'>
+		<div class='grid gap-4 pt-16 sm:grid-cols-2 lg:grid-cols-4'>
 			{
 				aboutData.map(({ icon, title, content }) => (
 					<Card icon={icon} title={title} content={content} />
