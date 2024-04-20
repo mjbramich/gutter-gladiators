@@ -57,7 +57,7 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 		</div>
 
 		<div
-			class='*:border-bg-base flex flex-1 grow items-center justify-center gap-12 divide-x md:justify-start'
+			class='*:border-bg-base mr-12 flex flex-1 grow items-center justify-center gap-12 divide-x md:justify-start'
 		>
 			<a href='/'>
 				<img src={Logo.src} alt='Gutter Guardians Logo' class='w-[100px] lg:w-[120px]' />
@@ -68,8 +68,6 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 				<p class='max-w-60 font-semibold'>Extensive Plumbing and Gutter Cleaning Experience</p>
 			</div>
 		</div>
-
-		<Button icon='phone-l' variant='link' class='w-12 text-4xl md:hidden' />
 
 		<div class:list={['hidden md:flex items-center  p-3 md:p-0']}>
 			<div class='flex items-center justify-between gap-4 md:w-auto'>
@@ -122,7 +120,6 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 		const header = document.getElementById('header');
 		const navContent = document.querySelector('#header nav');
 		const hamburgerBtn = document.querySelector('[data-toggle-menu]');
-		const ul = document.querySelector('nav ul');
 		let isOpen = false;
 		const toggleNav = () => {
 			isOpen ? closeNav() : openNav();
@@ -166,21 +163,28 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 			header?.classList.remove('h-dvh');
 		}
 
+		function handleLinks() {
+			const links = document.querySelectorAll('nav ul a');
+			console.log(links);
+		}
+
 		return {
 			toggleNav,
 			handleResize,
-			closeNav
+			closeNav,
+			handleLinks
 		};
 	}
 
 	function init() {
-		const { toggleNav, handleResize, closeNav } = mobileMenu();
+		const { toggleNav, handleResize, closeNav, handleLinks } = mobileMenu();
 		const navBtn = document.querySelector('[data-toggle-menu]');
 		const navContent = document.querySelector('#header nav');
 		const screenSize = window.matchMedia('(max-width: 767px)');
 		navBtn?.addEventListener('click', () => toggleNav());
 		screenSize.addEventListener('change', () => handleResize());
 		navContent?.addEventListener('click', () => handleResize());
+		handleLinks();
 	}
 	init();
 	document.addEventListener('astro:after-swap', init);
