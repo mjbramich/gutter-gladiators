@@ -2,34 +2,14 @@
 import About from '@components/About.astro';
 import CallToAction from '@components/CallToAction.astro';
 import Contact from '@components/Contact.astro';
-import Features from '@components/Features.astro';
 import Hero from '@components/Hero.astro';
+import Services from '@components/Services.astro';
 import Stats from '@components/Stats.astro';
 import Testimonials from '@components/Testimonials.astro';
 import Work from '@components/Work.astro';
 import siteData from '@config/siteData.ts';
 
-import Layout from '../layouts/Layout.astro';
-
-// interface Link {
-// 	text?: string;
-// 	href?: string;
-// 	ariaLabel?: string;
-// 	icon?: string;
-// }
-
-// const links = [
-// 	{ text: 'Home', href: '/' },
-// 	{ text: 'About', href: '#about' },
-// 	{ text: 'Services', href: '#services' },
-// 	{ text: 'Work', href: '#work' },
-// 	{ text: 'Contact', href: '#contact' }
-// ];
-
-// const actions: ActionLink[] = [
-// 	{ variant: 'primary', text: '0400 000 000', type: 'link', icon: 'phone-r' },
-// 	{ variant: 'outline', text: 'Get a quote', type: 'link', icon: 'arrow-r' }
-// ];
+import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title={siteData.title} description={siteData.description}>
@@ -37,21 +17,10 @@ import Layout from '../layouts/Layout.astro';
 		<Hero />
 		<About />
 		<Stats />
-		<Features />
+		<Services />
 		<Work />
 		<CallToAction />
 		<Testimonials />
 		<Contact />
-		<!-- <Button variant='primary' href="/home" target="/hello" type="button"  >Hello</Button>
-		<Button variant='secondary' href="/home" target="/hello" s>Hello</Button>
-		<Button variant='link' href="/home" target="/hello" size="'sm" >Hello</Button>
-		<Button variant='outline' href="/home" target="/hello" >Hello</Button>
-		<Button variant="primary" icon="favicon" type="button">Hello</Button> -->
 	</main>
 </Layout>
-
-<style>
-	main {
-		background: var(--bg-primary);
-	}
-</style>
