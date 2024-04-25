@@ -8,7 +8,6 @@ import Button from '@components/Button.astro';
 	method='POST'
 	class='mt-4 flex flex-col gap-4'
 	data-netlify='true'
-	data-astro-reload
 	enctype='application/x-www-form-urlencoded'
 	netlify-honeypot
 >
@@ -192,7 +191,7 @@ import Button from '@components/Button.astro';
 		// E
 		submitButton!.onclick = (event) => {
 			if (!isPrivacyPolicyAccepted()) {
-				// event.preventDefault(); // Prevent form submission if privacy policy is not accepted
+				event.preventDefault(); // Prevent form submission if privacy policy is not accepted
 				alert('Please agree to the privacy policy before submitting.');
 			}
 		};
