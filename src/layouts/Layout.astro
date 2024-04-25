@@ -5,7 +5,6 @@ import '@/styles/global.css';
 
 import Footer from '@components/Footer.astro';
 import Header, { type ActionLink } from '@components/Nav/Header.astro';
-import ScrollBtn from '@components/ScrollBtn.astro';
 import type { ImageMetadata } from 'astro';
 
 import BaseHead from './BaseHead.astro';
@@ -54,7 +53,7 @@ const { title, description, image, noindex = false } = Astro.props;
 		<main>
 			<slot />
 		</main>
-		<ScrollBtn />
+		<!-- <ScrollBtn /> -->
 		<Footer />
 		<script>
 			// eslint-disable-next-line
@@ -64,7 +63,7 @@ const { title, description, image, noindex = false } = Astro.props;
 			AOS.init({ once: true, duration: 0.75, distance: 15, offset: 150 });
 
 			// runs on view transitions navigation
-			document.addEventListener('astro:after-swap', AOS.refreshHard);
+			// document.addEventListener('astro:after-swap', AOS.refreshHard);
 		</script>
 	</body>
 </html>
