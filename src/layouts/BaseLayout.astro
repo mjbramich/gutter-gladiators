@@ -40,7 +40,7 @@ const { title, description, image, noindex = false } = Astro.props;
 			AOS.init({ once: true, duration: 0.75, distance: 15, offset: 150 });
 
 			// runs on view transitions navigation
-			// document.addEventListener('astro:after-swap', AOS.refreshHard);
+			document.addEventListener('astro:after-swap', AOS.refreshHard);
 		</script>
 	</body>
 </html>
