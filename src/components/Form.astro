@@ -5,9 +5,11 @@ import Button from '@components/Button.astro';
 <form
 	id='contact-form'
 	name='contact form'
-	method='post'
+	method='POST'
 	class='mt-4 flex flex-col gap-4'
 	data-netlify='true'
+	data-astro-reload
+	enctype='application/x-www-form-urlencoded'
 >
 	<input type='hidden' name='form-name' value='contact' />
 
@@ -120,7 +122,6 @@ import Button from '@components/Button.astro';
 
 	<div class='flex gap-x-4 sm:col-span-2'>
 		<div class='flex h-6 items-center'>
-			<!-- Enabled: "bg-kangakangablue", Not Enabled: "bg-gray-200" -->
 			<button
 				type='button'
 				id='privacy-toggle-btn'
@@ -130,7 +131,6 @@ import Button from '@components/Button.astro';
 				aria-labelledby='switch-1-label'
 			>
 				<span class='sr-only'>Agree to policies</span>
-				<!-- Enabled: "translate-x-3.5", Not Enabled: "translate-x-0" -->
 				<span
 					aria-hidden='true'
 					id='privacy-slider'
@@ -148,7 +148,9 @@ import Button from '@components/Button.astro';
 			>.
 		</label>
 	</div>
-	<Button variant='primary' type='submit' id='form-submit' class="'rounded-sm">Submit</Button>
+	<Button variant='primary' type='submit' id='form-submit' form='contact-form' class='rounded-sm'
+		>Submit</Button
+	>
 </form>
 
 <script>
@@ -189,7 +191,7 @@ import Button from '@components/Button.astro';
 		// E
 		submitButton!.onclick = (event) => {
 			if (!isPrivacyPolicyAccepted()) {
-				event.preventDefault(); // Prevent form submission if privacy policy is not accepted
+				// event.preventDefault(); // Prevent form submission if privacy policy is not accepted
 				alert('Please agree to the privacy policy before submitting.');
 			}
 		};
