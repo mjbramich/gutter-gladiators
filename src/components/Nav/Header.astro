@@ -1,11 +1,10 @@
 ---
-import Years from '@assets/images/10YEARS+.png';
+import Years from '@assets/images/5years.png';
 import Logo from '@assets/images/gglogo.png';
 import Announcement from '@components/Announcement.astro';
 import Button from '@components/Button.astro';
 import NavLink from '@components/Nav/NavLink.astro';
 import Toggle from '@components/Nav/Toggle.astro';
-import { Picture } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 
 interface Link {
@@ -57,15 +56,15 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 		</div>
 
 		<div
-			class='*:border-bg-base mr-12 flex flex-1 grow items-center justify-center gap-12 divide-x md:justify-start'
+			class='mr-12 flex flex-1 grow items-center justify-center gap-12 divide-x *:border-default md:justify-start'
 		>
-			<a href='/'>
+			<a href='/' class=''>
 				<img src={Logo.src} alt='Gutter Guardians Logo' class='w-[100px] lg:w-[120px]' />
 			</a>
 
 			<div class='hidden items-center gap-4 lg:flex'>
-				<Picture src={Years} alt='logo' width={100} class='ml-12' />
-				<p class='max-w-60 font-semibold'>Extensive Plumbing and Gutter Cleaning Experience</p>
+				<img src={Years.src} alt='logo' class='ml-12 w-28' />
+				<p class='max-w-60 font-semibold'>Extensive Gutter Cleaning Experience</p>
 			</div>
 		</div>
 
