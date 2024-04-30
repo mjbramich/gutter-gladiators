@@ -5,6 +5,7 @@ import Announcement from '@components/Announcement.astro';
 import Button from '@components/Button.astro';
 import NavLink from '@components/Nav/NavLink.astro';
 import Toggle from '@components/Nav/Toggle.astro';
+import Image from 'astro/components/Image.astro';
 import { Icon } from 'astro-icon/components';
 
 interface Link {
@@ -59,11 +60,11 @@ const { id = 'header', links = [], isFullWidth = false, actions = [] } = Astro.p
 			class='mr-12 flex flex-1 grow items-center justify-center gap-12 divide-x *:border-default md:justify-start'
 		>
 			<a href='/' class=''>
-				<img src={Logo.src} alt='Gutter Guardians Logo' class='w-[100px] lg:w-[120px]' />
+				<Image src={Logo} alt='Gutter Guardians Logo' class='w-[100px] lg:w-[120px]' />
 			</a>
 
 			<div class='hidden items-center gap-4 lg:flex'>
-				<img src={Years.src} alt='logo' class='ml-12 w-28' />
+				<Image src={Years} alt='logo' class='ml-12 w-28' />
 				<p class='max-w-60 font-semibold'>Extensive Gutter Cleaning Experience</p>
 			</div>
 		</div>
