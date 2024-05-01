@@ -14,28 +14,28 @@ interface CardInfo {
 
 const aboutData: CardInfo[] = [
 	{
-		icon: 'award',
-		title: 'State-of-the-Art Equipment',
+		icon: 'verified',
+		title: 'Compliant, licensed, and insured',
 		content:
-			'We invest in the latest technology and equipment to deliver superior results. With advanced cleaning tools and techniques, Gutter Gladiators ensures thorough and effective cleaning for your gutters and solar panels.'
-	},
-	{
-		icon: 'clock',
-		title: 'Downpipe Inspections and Repairs',
-		content:
-			'Downpipe Inspections and Repairs involve meticulous evaluation and fixing of drainage pipes, ensuring smooth water flow and preventing leaks or blockages.'
+			"When you entrust us with your gutter and solar panel cleaning needs, you're assured of our full compliance, licensing, and insurance. Your property is in safe hands with our experienced, reliable, and professional team."
 	},
 	{
 		icon: 'verified',
-		title: 'Fully Licensed and insured',
+		title: 'Reliable local expertise',
 		content:
-			'Opt for our fully licensed and insured gutter cleaning and solar panel services. Our expert team ensures compliant care, providing thorough cleaning and complete liability protection for your peace of mind.'
+			'As locals, we understand the unique challenges of gutter and solar panel cleaning in Devonport, Tasmania. Count on us to deliver personalised services tailored to your specific needs.'
 	},
 	{
-		icon: 'location',
-		title: 'Local Expertise',
+		icon: 'verified',
+		title: 'We service all properties',
 		content:
-			"We understand the unique challenges that Tasmanian homeowners face. With Gutter Gladiators, you're not just getting a service provider you're getting a trusted neighbor who is committed to your home's well-being"
+			'Whether you need cleaning for your home, office, retail space, or industrial property, we have the expertise and equipment to handle projects of all sizes.'
+	},
+	{
+		icon: 'verified',
+		title: 'Multi-storey property specialists',
+		content:
+			"The height of your property won't deter us from doing our job safely and efficiently. The Gutter Gladiators team is equipped to handle multi-storey buildings, ensuring every inch is thoroughly cleaned."
 	}
 ];
 ---
@@ -45,19 +45,17 @@ const aboutData: CardInfo[] = [
 		<div class='gap-8 lg:flex'>
 			<div class='mx-auto lg:mx-0 lg:max-w-2xl'>
 				<h2 class='mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
-					Choose The Professionals
+					Call the Professionals <br /> - Gutter Gladiators
 				</h2>
-				<p class='mt-6 text-lg leading-8 text-gray-600'>
-					At Gutter Gladiators, we specialise in gutter cleaning, solar panel cleaning, and exterior
-					cleaning services across the beautiful North West coast of Tasmania, including Devonport,
-					Ulverstone, Burnie, and Port Sorell.
+				<p class='mt-6 text-gray-600 sm:text-xl'>
+					Do you have clogged gutters causing water damage to your property?
 				</p>
-
-				<p class='mt-6 text-lg leading-8 text-gray-600'>
-					Our expert team is dedicated to keeping your gutters clear, maximizing the efficiency of
-					your solar panels, and enhancing the overall appearance of your home. Trust us to deliver
-					professional and thorough cleaning solutions, ensuring your property remains in pristine
-					condition year-round.
+				<p class='mt-1 text-gray-600 sm:text-xl'>
+					Are your solar panels losing efficiency because of the buildup of dirt and debris?
+				</p>
+				<p class='mt-1 text-gray-600 sm:text-xl'>
+					Reach out to Gutter Gladiators for professional and reliable cleaning services tailored to
+					your requirements.
 				</p>
 
 				<!-- <div class='mt-6 flex items-center gap-2'>
@@ -102,8 +100,9 @@ const aboutData: CardInfo[] = [
 			</div>
 		</div>
 
-		<!--GRID -->
-		<div class='grid gap-4 pt-16 sm:grid-cols-2 lg:grid-cols-4'>
+		<h2 class='h2 mt-16'>Why Choose Gutter Gladiators</h2>
+
+		<div class='grid gap-4 pt-12 sm:grid-cols-2 lg:grid-cols-4'>
 			{
 				aboutData.map(({ icon, title, content }) => (
 					<Card icon={icon} title={title} content={content} />
