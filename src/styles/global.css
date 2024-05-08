@@ -48,8 +48,8 @@
 	}
 
 	.form__input {
-		@apply w-full rounded-sm shadow bg-light p-2.5 transition;
-		@apply focus-visible:border-primary focus-visible:ring-1 focus-visible:ring-primary;
+		@apply w-full rounded-sm shadow bg-light p-2.5 transition text-gray-600;
+		@apply focus-visible:border-primary focus-visible:ring-1 focus-visible:ring-primary placeholder:text-gray-600;
 		-webkit-appearance: none;
 	}
 
