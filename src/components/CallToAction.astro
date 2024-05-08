@@ -1,11 +1,14 @@
 ---
 import fascia from '@assets/images/fascia.jpg';
+import { getImage } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 
 import Button from './Button.astro';
+
+const backgroundImage = await getImage({ src: fascia, format: 'webp' });
 ---
 
-<section class='bg-hero relative' style={`background-image: url(${fascia.src})`}>
+<section class='bg-hero relative' style={`background-image: url(${backgroundImage.src})`}>
 	<!--Overlay -->
 	<div
 		class='hero-overlay absolute left-0 top-0 size-full bg-gradient-to-r from-zinc-800/60 to-zinc-900'

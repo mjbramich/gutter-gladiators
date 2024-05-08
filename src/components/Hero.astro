@@ -3,6 +3,7 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 
+import { getImage } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 
 import fascia from '@/assets/images/fascia.jpg';
@@ -10,6 +11,10 @@ import metalRoof from '@/assets/images/gutters-metal-roof.jpg';
 import ute from '@/assets/images/ute.jpg';
 
 import Button from './Button.astro';
+
+const background1 = await getImage({ src: fascia, format: 'webp' });
+const background2 = await getImage({ src: metalRoof, format: 'webp' });
+const background3 = await getImage({ src: ute, format: 'webp' });
 ---
 
 <!--Outer Hero container -->
@@ -21,16 +26,18 @@ import Button from './Button.astro';
 		<div class='swiper-wrapper size-full'>
 			<!-- Slides -->
 			<div class='swiper-slide'>
-				<div class='bg-hero swiper-slide-cover' style=`background-image: url(${fascia.src})`></div>
-			</div>
-
-			<div class='swiper-slide'>
-				<div class='bg-hero swiper-slide-cover' style=`background-image: url(${metalRoof.src})`>
+				<div class='bg-hero swiper-slide-cover' style=`background-image: url(${background1.src})`>
 				</div>
 			</div>
 
 			<div class='swiper-slide'>
-				<div class='bg-hero swiper-slide-cover' style=`background-image: url(${ute.src})`></div>
+				<div class='bg-hero swiper-slide-cover' style=`background-image: url(${background2.src})`>
+				</div>
+			</div>
+
+			<div class='swiper-slide'>
+				<div class='bg-hero swiper-slide-cover' style=`background-image: url(${background3.src})`>
+				</div>
 			</div>
 		</div>
 	</div>
