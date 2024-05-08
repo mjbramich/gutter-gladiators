@@ -5,6 +5,8 @@
  */
 
 // components
+import SolarPanelCleaning from '@assets/images/solarpanelcleaning.jpg';
+import VacuumGutterCleaning from '@assets/images/vacuum-system.jpg';
 import FeatureCard from '@components/FeatureCard.astro';
 // images
 import image2 from '@images/ute.jpg';
@@ -22,28 +24,30 @@ const serviceData: ServiceItem[] = [
 	{
 		image: image2,
 		id: 'gutter-cleaning',
-		title: 'Residential, Commercial and Industrial Gutter Cleaning',
-		details: `With a focus on thorough cleaning and meticulous attention to detail, we remove debris, leaves, and blockages to prevent water damage and maintain the integrity of your property's gutter system. Trust Gutter Gladiators for professional gutter cleaning solutions tailored to your specific needs, whether residential, commercial, or industrial.`
+		title: 'Gutter Cleaning',
+		details: `Looking for professional gutter cleaning near you? Gutter Gladiators is ready to help. We'll keep your gutters free from leaves, twigs, and other debris with our expert gutter cleaning services. Our team uses state-of-the-art equipment to ensure thorough cleaning and prevent water damage to your property.
+		`
 	},
 	{
-		image: image2,
+		image: VacuumGutterCleaning,
 		id: 'vacuum-gutter-cleaning',
-		title: 'No mess vacuum gutter cleaning',
-		details: `A game-changer in gutter cleaning for Tasmanian home and property owners. This state-of-the-art system ensures a highly efficient and comprehensive cleaning process. It excels in removing leaves, debris, and blockages seamlessly, leaving no residue or mess behind, revolutionising the traditional approach to gutter maintenance.`
+		title: 'vacuum gutter cleaning',
+		details: `Are you in need of vacuum gutter cleaning near you? Experience the next level of gutter cleaning in Tasmania with our advanced exterior cleaning vacuum technology. Our process ensures no mess while removing the most stubborn debris, leaving your gutters pristine and clog-free.`
 	},
 	{
-		image: image2,
+		image: SolarPanelCleaning,
 		id: 'solar-panel-cleaning',
 		title: 'Solar Panel Cleaning',
-		details: `Our expert team specializes in delivering top-notch cleaning solutions tailored for solar panels across Tasmania. Utilizing advanced techniques and eco-friendly practices, we ensure thorough removal of dirt, dust, and debris, enhancing sunlight absorption and energy production. With a commitment to excellence and sustainability, our service not only revitalizes your solar panels but also prolongs their lifespan.`
+		details: `Maximise the efficiency of your solar panels with regular cleaning from Gutter Gladiators. Our gentle yet effective cleaning methods remove dirt, dust, bird droppings, and other types of debris. This way, your solar panels absorb maximum sunlight and produce optimum energy.`
 	}
 ];
 ---
 
 <section id='services' class='overflow-hidden bg-white'>
 	<div class='container'>
-		<div class='mx-auto flex max-w-2xl sm:justify-center'>
-			<h2 class='h1'>What we offer</h2>
+		<div class='mx-auto flex max-w-2xl flex-col sm:items-center sm:justify-center'>
+			<h2 class='h1'>Our Services</h2>
+			<p class='mt-6 text-xl'>At Gutter Gladiators, we specialise in three core services:</p>
 		</div>
 		<div class='mt-10 flex flex-col gap-16 md:mt-16 md:gap-24'>
 			{
