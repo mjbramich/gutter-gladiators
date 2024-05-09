@@ -13,8 +13,8 @@
 		"lint-fix": "eslint --ext '.js,.jsx,.ts,.tsx,.astro' --fix ."
 	},
 	"resolutions": {
-		"astro/sharp": "0.33.1",
-		"@playform/compress/sharp": "0.33.1"
+		"astro/sharp": "^0.33.1",
+		"@playform/compress/sharp": "^0.33.1"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.5.9",
