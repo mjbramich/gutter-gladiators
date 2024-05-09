@@ -9,9 +9,9 @@ interface Props {
 const { text, location } = Astro.props;
 ---
 
-<div class='relative bg-primary py-2 text-sm font-medium text-default'>
+<div class='relative bg-primary py-2 text-sm font-medium text-gray-900'>
 	<div class='mx-auto flex max-w-7xl justify-between truncate px-6'>
-		<ul class='hidden space-x-4 text-default lg:flex'>
+		<ul class='hidden space-x-4 text-gray-900 lg:flex'>
 			{
 				text.map((t) => (
 					<li class='flex items-center space-x-2'>
@@ -24,7 +24,7 @@ const { text, location } = Astro.props;
 
 		<div class='flex items-center space-x-2'>
 			<Icon name='arrow-r' />
-			<p class='text-default'>{location}</p>
+			<p class='text-gray-900'>{location}</p>
 		</div>
 	</div>
 </div>
