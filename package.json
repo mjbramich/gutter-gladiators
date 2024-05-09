@@ -14,7 +14,7 @@
 	},
 	"resolutions": {
 		"astro/sharp": "0.33.1",
-		"playform/compress/sharp": "0.33.1"
+		"@playform/compress/sharp": "0.33.1"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.5.9",
