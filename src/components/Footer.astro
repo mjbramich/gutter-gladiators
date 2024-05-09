@@ -1,7 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 
-import Logo from '@/assets/images/gglogo.png';
+import Logo from '@/assets/images/shieldlogo.png';
 
 import Accordion from './Accordion.astro';
 
@@ -29,8 +30,8 @@ const footerHeadings: FooterHeading[] = [
 		title: 'Services',
 		links: [
 			{ title: 'Gutter Cleaning', href: '#gutter-cleaning' },
-			{ title: 'Solar Panel Cleaning', href: '#solar-panel-cleaning' },
-			{ title: 'Vacuum Gutter Cleaning', href: '#vacuum-gutter-cleaning' }
+			{ title: 'Vacuum Gutter Cleaning', href: '#vacuum-gutter-cleaning' },
+			{ title: 'Solar Panel Cleaning', href: '#solar-panel-cleaning' }
 		]
 	},
 	{
@@ -50,21 +51,21 @@ const footerHeadings: FooterHeading[] = [
 
 <!-- FOOTER -->
 <footer class='bg-primary'>
-	<div class='mx-auto max-w-7xl px-6 text-default lg:px-8'>
+	<div class='mx-auto max-w-7xl px-6 text-gray-900 lg:px-8'>
 		<div class='pt-16'>
-			<div class='grid items-center tab:flex tab:justify-between tab:pb-4'>
+			<div class='grid items-center gap-4 tab:flex tab:justify-between tab:pb-4'>
 				<div class='flex flex-col items-center tab:max-w-xs tab:items-start'>
 					<a href='/' aria-label='home' class=''>
 						<!-- <Image src={Logo} width={150} alt='logo' /> -->
-						<img src={Logo.src} alt='Gutter Guardians Logo' class='w-[150px]' />
+						<Image src={Logo} alt='Gutter Guardians Logo' class='w-[150px] tab:w-[50px]' />
 					</a>
-					<p class='mt-4 max-w-md text-center tab:text-start'>
-						We're dedicated to providing top-quality gutter cleaning cleaning and solar panel
-						cleaning throughout Tasmania, serving Devonport, Burnie, Ulverstone, Port Sorell, and
-						beyond.
+					<p class='mt-6 max-w-md text-center tab:text-start'>
+						At Gutter Gladiators, we provide professional solar panel and gutter cleaning on the
+						North-West Coast of Tasmania, serving Devonport and Burnie, as well as Ulverstone, Port
+						Sorell, and beyond.
 					</p>
 
-					<div class='mt-4 flex items-center justify-start gap-2'>
+					<div class='mt-6 flex items-center justify-start gap-2'>
 						<a
 							href='https://www.facebook.com'
 							aria-label='Gutter Gladiators Facebook'
@@ -83,7 +84,7 @@ const footerHeadings: FooterHeading[] = [
 					</div>
 				</div>
 
-				<nav class='hidden justify-end gap-16 text-default md:max-w-none tab:flex'>
+				<nav class='hidden justify-end gap-16 text-gray-900 md:max-w-none tab:flex'>
 					{
 						footerHeadings.map((heading) => (
 							<ul class='flex flex-col   '>

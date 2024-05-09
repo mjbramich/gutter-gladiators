@@ -17,7 +17,7 @@ import Button from '@components/Button.astro';
 	<div class='mt-10 grid gap-4 sm:grid-cols-2'>
 		<div class='flex flex-col'>
 			<label for='contact-fname' class='form__label sr-only'
-				>First Name <span class='text-red-600'>*</span></label
+				>First Name <span class='text-gray-600'>*</span></label
 			>
 			<input
 				type='text'
@@ -100,12 +100,12 @@ import Button from '@components/Button.astro';
 	</div>
 
 	<div class='bg-light w-full rounded-sm p-2.5 shadow transition'>
-		<label class='text-base text-gray-400'>Does your property have gutter guard installed?</label>
+		<label class='text-base text-gray-600'>Does your property have gutter guard installed?</label>
 		<fieldset class='mt-2'>
 			<div class='flex items-center gap-4'>
 				<div class='flex items-center'>
 					<input id='yes' name='notification-method' type='radio' class='size-4 accent-black' />
-					<label for='yes' class='ml-3 block text-sm leading-6 text-gray-400'>Yes</label>
+					<label for='yes' class='ml-3 block text-sm leading-6 text-gray-600'>Yes</label>
 				</div>
 				<div class='flex items-center'>
 					<input
@@ -115,7 +115,7 @@ import Button from '@components/Button.astro';
 						checked
 						class='size-4 accent-black'
 					/>
-					<label for='no' class='ml-3 block text-sm leading-6 text-gray-400'>No</label>
+					<label for='no' class='ml-3 block text-sm leading-6 text-gray-600'>No</label>
 				</div>
 			</div>
 		</fieldset>
@@ -143,7 +143,7 @@ import Button from '@components/Button.astro';
 		<label class='text-sm leading-6 text-gray-600' id='switch-1-label'>
 			By selecting this, you agree to our
 			<a
-				href='./privacy.html'
+				href='./privacy-policy'
 				class='focus-visible:outline-kangablue font-semibold text-gray-900 underline'
 				>Privacy Policy</a
 			>.

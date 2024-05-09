@@ -14,7 +14,7 @@ export interface SiteDataProps {
 		// used for blog post purposes
 		name: string;
 		email: string;
-		twitter: string; // used for twitter cards when sharing a blog post on twitter
+		twitter?: string; // used for twitter cards when sharing a blog post on twitter
 	};
 	defaultImage: {
 		src: string;
@@ -26,9 +26,9 @@ export interface SiteDataProps {
 const siteData: SiteDataProps = {
 	name: 'Gutter Gladiators',
 	// Your website's title and description (meta fields)
-	title: 'Gutter Gladiators - a playful small business theme crafted with Astro and Tailwind CSS',
+	title: 'Professional Gutter & Solar Panel Cleaning by Gutter Gladiators',
 	description:
-		'Create a fun website for your small business clients with our beautiful website theme designed using Astro and Tailwind CSS. Perfect for freelancers, developers, startups, and personal use.',
+		'Looking for a professional gutter or solar panel cleaning service in Tasmania? Read on to find out why Gutter Gladiators is your best option.',
 	useViewTransitions: true,
 	useAnimations: true,
 
@@ -42,8 +42,8 @@ const siteData: SiteDataProps = {
 	// Your information for blog post purposes
 	author: {
 		name: 'Jackson Walsh',
-		email: 'jackson@guttergladiators.com',
-		twitter: 'Cosmic_Themes'
+		email: 'jackson@guttergladiators.com'
+		// twitter: ''
 	},
 
 	// default image for meta tags if the page doesn't have an image already

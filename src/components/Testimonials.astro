@@ -8,10 +8,14 @@ import TestimonialCard from './TestimonialCard.astro';
 
 <section id='faq2' class='bg-light'>
 	<div class='container'>
-		<div class='flex justify-center'>
-			<h2 class='h1 flex gap-1 text-center'>Customer Reviews</h2>
+		<div class='flex flex-col items-center justify-center'>
+			<h2 class='h1 flex gap-1 text-center'>What our customers say</h2>
+			<p class='description mt-4 max-w-md text-center'>
+				Curious about the quality of our service? Find out with these firsthand experiences
+				recounted by our happy customers.
+			</p>
 		</div>
-		<div class='mx-auto mt-20 grid gap-6 gap-y-20 md:grid-cols-3'>
+		<div class='mx-auto mt-12 grid gap-6 gap-y-20 md:grid-cols-3'>
 			{testimonialData.map((testimonial) => <TestimonialCard {...testimonial} />)}
 		</div>
 	</div>
