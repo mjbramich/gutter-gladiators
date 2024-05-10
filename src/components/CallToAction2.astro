@@ -1,12 +1,30 @@
 ---
 import { Icon } from 'astro-icon/components';
+
+import Button from './Button.astro';
 ---
 
 <div class='bg-primary py-12'>
 	<div class='mx-auto max-w-7xl px-6 lg:px-8'>
-		<div class='mx-auto max-w-2xl lg:max-w-none'>
-			<ul
-				class='grid grid-cols-2 items-center justify-center gap-6 gap-y-12 overflow-hidden rounded-2xl text-center text-default sm:grid-cols-2 md:gap-x-8 lg:grid-cols-4'
+		<div
+			class='mx-auto flex max-w-xl flex-col items-center justify-center gap-6 text-center lg:max-w-3xl'
+		>
+			<h2 class='h1'>Ready to Experience the Difference With Gutter Gladiators?</h2>
+			<p class='max-w-lg text-lg font-semibold text-gray-900'>
+				Don’t wait until it’s too late – protect your property and maximise your energy savings
+				today!
+			</p>
+			<Button
+				text='Get a quote'
+				href='#contact'
+				variant='outline'
+				icon='arrow-r'
+				class='h-14 border-default text-gray-900 hover:bg-default hover:text-white sm:text-lg'
+			>
+				<Icon name='arrow-r' />
+			</Button>
+			<!-- <ul
+				class='grid grid-cols-2 items-center justify-center gap-6 gap-y-12 overflow-hidden rounded-2xl text-center text-gray-900 sm:grid-cols-2 md:gap-x-8 lg:grid-cols-4'
 			>
 				<li class='flex grow-0 flex-col items-center justify-center gap-2 lg:flex-row'>
 					<div class='rounded-full'>
@@ -35,7 +53,7 @@ import { Icon } from 'astro-icon/components';
 					</div>
 					<p class='text-xl tracking-tight'>We can handle multi-story properties</p>
 				</li>
-			</ul>
+			</ul> -->
 		</div>
 	</div>
 </div>
