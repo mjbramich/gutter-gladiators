@@ -12,23 +12,25 @@ export interface TestimonialItem {
 const testimonialData: TestimonialItem[] = [
 	{
 		avatar: girl1,
-		name: 'Caitlin',
+		name: 'Shane',
 		title: 'Client',
-		testimonial: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate.
+		testimonial: `Rain just started, a few hours after todays clean. 
+		Happy now gutters are free flowing again.
+		Great work & great guy. 
+		I thoroughly recommend.
       `
 	},
 	{
 		avatar: BowTiedFocus,
-		name: 'BowTiedFocus',
-		title: 'Frontend Engineer',
-		testimonial: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. 
-        `
+		name: 'Tim',
+		title: 'Client',
+		testimonial: `Jackson done a awesome job on all our properties. I can't recommend him enough.`
 	},
 	{
 		avatar: TravisB,
-		name: 'Travis B',
-		title: 'Developer',
-		testimonial: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. 
+		name: 'Lisa',
+		title: 'Client',
+		testimonial: `Gutter Gladiators went above and beyond! Their team was efficient, friendly, and did an excellent job clearing out my gutters. Couldn't be happier with their service! 
         `
 	}
 ];
