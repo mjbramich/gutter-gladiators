@@ -35,14 +35,14 @@ const siteData: SiteDataProps = {
 	// used on contact page and footer
 	contact: {
 		address1: 'Devonport, TAS',
-		phone: '0400 000 000',
+		phone: '0447 923 270',
 		email: 'jackson@guttergladiators.com.au'
 	},
 
 	// Your information for blog post purposes
 	author: {
 		name: 'Jackson Walsh',
-		email: 'jackson@guttergladiators.com'
+		email: 'jackson@guttergladiators.com.au'
 		// twitter: ''
 	},
 
